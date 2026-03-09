@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITW Design Tech — CI Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #020618;
+      color: #ffffff;
+      padding: 64px;
+      width: 1400px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #49657a;
+      margin-bottom: 24px;
+    }
+    .section { margin-bottom: 64px; }
+
+    /* COLOURS */
+    .color-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .color-chip { display: flex; flex-direction: column; gap: 12px; }
+    .chip-swatch {
+      width: 120px;
+      height: 80px;
+      border-radius: 12px;
+      border: 1px solid rgba(73,101,122,0.25);
+    }
+    .chip-name { font-size: 13px; font-weight: 600; color: #c0ced8; }
+    .chip-hex  { font-size: 12px; font-weight: 400; color: #8a9fae; }
+
+    /* TYPOGRAPHY */
+    .type-row { display: flex; flex-direction: column; gap: 32px; }
+    .type-item { display: flex; align-items: baseline; gap: 32px; border-bottom: 1px solid rgba(73,101,122,0.15); padding-bottom: 24px; }
+    .type-meta { width: 200px; flex-shrink: 0; }
+    .type-meta-name { font-size: 12px; font-weight: 600; color: #49657a; margin-bottom: 4px; }
+    .type-meta-spec { font-size: 11px; color: #8a9fae; line-height: 1.6; }
+    .type-sample { flex: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- BRAND -->
+  <div style="margin-bottom: 56px;">
+    <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #49657a; margin-bottom: 8px;">Brand</p>
+    <p style="font-size: 28px; font-weight: 700; color: #cad5e2;">ITW Design Tech</p>
+    <p style="font-size: 14px; color: #8a9fae; margin-top: 6px;">New Marketing Website · 2026</p>
+  </div>
+
+  <!-- COLOURS -->
+  <div class="section">
+    <p class="section-label">Colour Palette</p>
+    <div class="color-row">
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#020618;"></div>
+        <span class="chip-name">Background</span>
+        <span class="chip-hex">#020618</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#050b0f;"></div>
+        <span class="chip-name">Footer BG</span>
+        <span class="chip-hex">#050b0f</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#0f172b;"></div>
+        <span class="chip-name">Card Overlay</span>
+        <span class="chip-hex">#0f172b</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#1d293d;"></div>
+        <span class="chip-name">Input BG</span>
+        <span class="chip-hex">#1d293d</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#49657a;"></div>
+        <span class="chip-name">Slate (Primary)</span>
+        <span class="chip-hex">#49657a</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#df6f6d;"></div>
+        <span class="chip-name">Coral (Accent)</span>
+        <span class="chip-hex">#df6f6d</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#fabf71;"></div>
+        <span class="chip-name">Amber (Price)</span>
+        <span class="chip-hex">#fabf71</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#cad5e2;"></div>
+        <span class="chip-name">Light (Headings)</span>
+        <span class="chip-hex">#cad5e2</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#c0ced8;"></div>
+        <span class="chip-name">Body Text</span>
+        <span class="chip-hex">#c0ced8</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#8a9fae;"></div>
+        <span class="chip-name">Muted Text</span>
+        <span class="chip-hex">#8a9fae</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background: linear-gradient(90deg, #49657a 0%, #df6f6d 100%); border: none;"></div>
+        <span class="chip-name">CTA Gradient</span>
+        <span class="chip-hex">#49657a → #df6f6d</span>
+      </div>
+
+      <div class="color-chip">
+        <div class="chip-swatch" style="background:#ffffff; border: 1px solid rgba(73,101,122,0.4);"></div>
+        <span class="chip-name">White</span>
+        <span class="chip-hex">#ffffff</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="section">
+    <p class="section-label">Typography — Inter</p>
+    <div class="type-row">
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">H1 — Hero</p>
+          <p class="type-meta-spec">Inter Bold · 72px<br/>Line height 79.2px<br/>Tracking +0.12px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 72px; font-weight: 700; color: #cad5e2; line-height: 1.1;">Automate</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">H2 — Section</p>
+          <p class="type-meta-spec">Inter Bold · 48px<br/>Line height 52.8px<br/>Tracking +0.35px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 48px; font-weight: 700; color: #cad5e2; line-height: 1.1;">Tools Marketplace</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">H3 — Card Title</p>
+          <p class="type-meta-spec">Inter SemiBold · 20px<br/>Line height 32px<br/>Tracking −0.45px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 20px; font-weight: 600; color: #ffffff;">Figma Super Charged Plug-ins</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">H4 — Footer</p>
+          <p class="type-meta-spec">Inter SemiBold · 16px<br/>Line height 25.6px<br/>Tracking −0.31px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 16px; font-weight: 600; color: #ffffff;">Quick Links</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">Body Large</p>
+          <p class="type-meta-spec">Inter Regular · 24px<br/>Line height 36px<br/>Tracking +0.07px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 24px; font-weight: 400; color: #c0ced8; line-height: 1.5;">Save time, reduce cost, and scale your creative production.</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">Body</p>
+          <p class="type-meta-spec">Inter Regular · 16px<br/>Line height 25.6px<br/>Tracking −0.31px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 16px; font-weight: 400; color: #8a9fae; line-height: 1.6;">Stop doing by hand what your tools should do for you.</p>
+        </div>
+      </div>
+
+      <div class="type-item">
+        <div class="type-meta">
+          <p class="type-meta-name">Small / Label</p>
+          <p class="type-meta-spec">Inter Regular · 14px<br/>Line height 22.4px<br/>Tracking −0.15px</p>
+        </div>
+        <div class="type-sample">
+          <p style="font-size: 14px; font-weight: 400; color: #c0ced8;">Smart email management and filtering</p>
+        </div>
+      </div>
+
+      <div class="type-item" style="border-bottom: none;">
+        <div class="type-meta">
+          <p class="type-meta-name">Button</p>
+          <p class="type-meta-spec">Inter Medium · 14–18px<br/>Tracking −0.15 to −0.44px</p>
+        </div>
+        <div class="type-sample" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <span style="background: linear-gradient(90deg, #49657a, #df6f6d); border-radius: 8px; padding: 10px 20px; font-size: 18px; font-weight: 500; color: #fff; display: inline-block;">Explore Automations</span>
+          <span style="background: #fff; border-radius: 8px; padding: 10px 20px; font-size: 18px; font-weight: 500; color: #0a0a0a; display: inline-block;">Get Custom Automation</span>
+          <span style="background: linear-gradient(90deg, #49657a, #df6f6d); border-radius: 8px; padding: 8px 17px; font-size: 14px; font-weight: 500; color: #fff; display: inline-block;">Buy Now</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
