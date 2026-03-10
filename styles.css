@@ -283,14 +283,16 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.5;
   letter-spacing: 0.07px;
   max-width: 800px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 48px;
+.hero-solutions-label {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-light);
+  letter-spacing: 0.07px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .hero-logos-wrap {
@@ -337,6 +339,10 @@ a { text-decoration: none; color: inherit; }
   font-size: 20px;
   color: var(--text-muted);
   letter-spacing: -0.45px;
+}
+.section-subtitle strong {
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 /* --- Cards (shared) --- */
@@ -464,28 +470,6 @@ a { text-decoration: none; color: inherit; }
   flex: 1;
 }
 
-.product-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-bottom: 16px;
-}
-
-.product-icon-wrap {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(73,101,122,0.2) 0%, rgba(223,111,109,0.15) 100%);
-  border: 1px solid rgba(73,101,122,0.3);
-}
-
-.product-price {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--yellow);
-  letter-spacing: 0.07px;
-}
-
 .product-title {
   font-size: 20px;
   font-weight: 600;
@@ -543,7 +527,7 @@ a { text-decoration: none; color: inherit; }
 .benefit-icon-wrap {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 32px;
   background: linear-gradient(135deg, rgba(73,101,122,0.2) 0%, rgba(223,111,109,0.15) 100%);
   display: flex;
   align-items: center;

@@ -3,6 +3,97 @@
    Extends styles.css — do not import alone
    ========================================= */
 
+/* ─── Marketplace Page ───────────────────── */
+.page-hero--compact .page-hero-inner {
+  padding: 48px 16px;
+}
+
+.marketplace-page-section {
+  padding-top: 64px;
+}
+
+.mkt-category {
+  margin-bottom: 64px;
+}
+
+.mkt-category-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  padding-left: 4px;
+}
+
+.marketplace-grid--2col {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.marketplace-grid--1col {
+  grid-template-columns: 1fr !important;
+  max-width: 700px;
+}
+
+/* Price row inside product card */
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+/* Coming soon product card */
+.product-card--coming-soon {
+  opacity: 0.75;
+}
+
+.product-image-wrap--coming-soon {
+  background: rgba(73, 101, 122, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-placeholder {
+  font-size: 48px;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.coming-soon-pill {
+  display: inline-block;
+  background: rgba(223, 111, 109, 0.12);
+  border: 1px solid rgba(223, 111, 109, 0.25);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #df6f6d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .marketplace-grid--2col {
+    grid-template-columns: 1fr !important;
+  }
+  .marketplace-grid--1col {
+    max-width: 100%;
+  }
+}
+
 /* ─── Page Hero ─────────────────────────── */
 .page-hero {
   width: 100%;
@@ -217,6 +308,13 @@
 
 @media (min-width: 1200px) {
   .features-detail-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 4-column grid from tablet up (used for products with exactly 4 features) */
+@media (min-width: 768px) {
+  .features-detail-grid--4col {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -689,6 +787,18 @@
   margin-bottom: 32px;
 }
 
+.coming-soon-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #cad5e2 0%, #cad5e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .coming-soon-dot {
   width: 8px;
   height: 8px;
@@ -863,6 +973,67 @@
   letter-spacing: -0.15px;
 }
 
+/* ─── Video Demo Placeholder ─────────────── */
+.video-demo-wrap {
+  width: 100%;
+  max-width: 1207px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+.video-demo-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 7.4;
+  background: #49657a;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-demo-label {
+  font-size: 54px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: -0.5px;
+}
+
+/* ─── Challenge / Solution Side-by-Side ───── */
+.challenge-solution-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.challenge-solution-row .challenge-block,
+.challenge-solution-row .solution-block {
+  margin-bottom: 0;
+}
+
+/* ─── Single Pricing Card ─────────────────── */
+.pricing-single {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-single .pricing-tier {
+  width: 304px;
+}
+
+/* ─── Feature NEW Badge ───────────────────── */
+.feature-new-tag {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(223, 111, 109, 0.2);
+  color: #df6f6d;
+  border-radius: 4px;
+  padding: 2px 6px;
+  vertical-align: middle;
+  margin-left: 4px;
+  letter-spacing: -0.2px;
+}
+
 /* ─── Product Layout Helpers ─────────────── */
 .product-intro {
   display: grid;
@@ -900,6 +1071,14 @@
 }
 
 @media (max-width: 900px) {
+  .challenge-solution-row {
+    grid-template-columns: 1fr;
+  }
+
+  .video-demo-label {
+    font-size: 32px;
+  }
+
   .page-hero h1 {
     font-size: 40px;
   }
