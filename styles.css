@@ -1,12 +1,18 @@
 /* =========================================
-   AutoFlow AI — Design System
-   Based on Figma: New Marketing Website
+   Wild Stack — Complete Design System
+   Based on Full Figma Design: New Marketing Website
    ========================================= */
 
 /* --- Reset & Base --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -16,49 +22,61 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { display: block; max-width: 100%; }
-ul { list-style: none; }
-a { text-decoration: none; color: inherit; }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-/* --- Tokens --- */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Design Tokens --- */
 :root {
   /* Brand Colors */
-  --blue:          #49657A;
-  --blue-dark:     #2E4A5C;
-  --blue-darker:   #1A2F3D;
-  --orange:        #DF6F6D;
-  --orange-dark:   #c45a58;
-  --yellow:        #FABF71;
-  --black:         #0a0a0a;
+  --blue: #49657A;
+  --blue-dark: #2E4A5C;
+  --blue-darker: #1A2F3D;
+  --orange: #DF6F6D;
+  --orange-dark: #c45a58;
+  --yellow: #FABF71;
+  --black: #0a0a0a;
 
-  /* Backgrounds */
-  --bg-main:       #080f14;
-  --bg-alt:        rgba(73, 101, 122, 0.18);
-  --bg-footer:     #050b0f;
-  --bg-card:       rgba(73, 101, 122, 0.1);
-  --border:        rgba(73, 101, 122, 0.28);
+  /* Background Colors */
+  --bg-main: #080f14;
+  --bg-alt: rgba(73, 101, 122, 0.18);
+  --bg-footer: #050b0f;
+  --bg-card: rgba(73, 101, 122, 0.1);
+  --border: rgba(73, 101, 122, 0.28);
   --border-header: rgba(73, 101, 122, 0.22);
 
-  /* Text */
-  --text-primary:  #ffffff;
-  --text-muted:    #8a9fae;
-  --text-light:    #c0ced8;
-  --text-blue:     #6B8FA8;
-  --text-badge:    #FABF71;
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-muted: #8a9fae;
+  --text-light: #c0ced8;
+  --text-blue: #6B8FA8;
+  --text-badge: #FABF71;
 
   /* Gradients */
-  --grad-brand:    linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
-  --grad-btn:      linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
-  --grad-step:     linear-gradient(135deg, #49657A 0%, #DF6F6D 100%);
-  --grad-hero:     linear-gradient(147deg, rgba(26,47,61,0.8) 0%, #080f14 55%, rgba(223,111,109,0.2) 100%);
-  --grad-cta:      linear-gradient(90deg, rgba(73,101,122,0.65) 0%, rgba(223,111,109,0.45) 100%);
+  --grad-brand: linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
+  --grad-btn: linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
+  --grad-step: linear-gradient(135deg, #49657A 0%, #DF6F6D 100%);
+  --grad-hero: linear-gradient(147deg, rgba(26,47,61,0.8) 0%, #080f14 55%, rgba(223,111,109,0.2) 100%);
+  --grad-cta: linear-gradient(90deg, rgba(73,101,122,0.65) 0%, rgba(223,111,109,0.45) 100%);
+  --grad-section-alt: linear-gradient(160.76299911642144deg, rgba(73, 101, 122, 0.22) 0%, rgba(26, 47, 61, 0.35) 100%);
 
-  --radius-sm:     8px;
-  --radius-md:     10px;
-  --radius-lg:     14px;
-  --radius-full:   9999px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
 
-  --shadow-hero:   0 25px 50px -12px rgba(0,0,0,0.4);
+  --shadow-hero: 0 25px 50px -12px rgba(0,0,0,0.4);
+  --shadow-logo: 0px 0px 20px 0px rgba(73, 101, 122, 0.5);
 }
 
 /* --- Layout --- */
@@ -94,7 +112,10 @@ a { text-decoration: none; color: inherit; }
   padding: 8px 16px;
   letter-spacing: -0.15px;
 }
-.btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn:hover { 
+  opacity: 0.88; 
+  transform: translateY(-1px); 
+}
 
 .btn-primary {
   background: var(--grad-btn);
@@ -180,7 +201,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px 0px rgba(73, 101, 122, 0.5);
+  box-shadow: var(--shadow-logo);
   flex-shrink: 0;
 }
 
@@ -317,9 +338,9 @@ a { text-decoration: none; color: inherit; }
   padding: 80px 0;
 }
 .section-alt {
-  background: linear-gradient(135deg, rgba(73,101,122,0.22) 0%, rgba(26,47,61,0.35) 100%);
-  border-top: 1px solid rgba(73,101,122,0.2);
-  border-bottom: 1px solid rgba(73,101,122,0.2);
+  background: var(--grad-section-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .section-header {
