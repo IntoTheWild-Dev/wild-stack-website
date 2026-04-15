@@ -802,10 +802,7 @@
   line-height: 1.1;
   letter-spacing: -0.5px;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #cad5e2 0%, #cad5e2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .coming-soon-dot {

@@ -8,6 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles-new.css" />
+  <style>
+    /* Ensure hero title is solid white even if styles-new.css is missing */
+    .hero-title {
+      color: #ffffff !important;
+      background: none !important;
+      -webkit-text-fill-color: #ffffff !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,7 +36,7 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title gradient-text">Figma Plug-ins</h1>
+        <h1 class="hero-title">Figma Plug-ins</h1>
         <p class="hero-subtitle">Enhance your Figma workflow with powerful automation tools. Eliminate manual tasks and let your plugins handle the work for you.</p>
         
         <div class="hero-buttons">
