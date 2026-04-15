@@ -228,12 +228,13 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Hero --- */
 .hero {
-  min-height: 100vh;
+  min-height: min(100vh, 1040px);
   background: var(--grad-hero);
   padding-top: 73px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   position: relative;
   overflow: hidden;
 }
@@ -245,16 +246,49 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 896px;
   width: 100%;
-  padding: 80px 16px;
+  padding: 48px 16px 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.hero-value-bar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 200px;
+  padding: 40px 24px;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-value-text {
+  max-width: 982px;
+  margin: 0 auto;
+  font-size: clamp(18px, 2.5vw, 35px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.07px;
+  color: #0e1829;
 }
 
 .hero-title {
@@ -291,7 +325,7 @@ a { text-decoration: none; color: inherit; }
   border: 1px solid #df6f6d;
   border-radius: 9px;
   padding: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   box-shadow: 0 14px 28px -7px rgba(0,0,0,0.4);
 }
 
@@ -332,14 +366,7 @@ a { text-decoration: none; color: inherit; }
 .hero-app-line1 { font-size: 11px; }
 .hero-app-line2 { font-size: 13px; }
 
-.hero-subtitle {
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--text-light);
-  line-height: 1.6;
-  letter-spacing: 0.07px;
-  max-width: 800px;
-}
+/* Subtitle moved to .hero-value-bar (.hero-value-text) per Figma */
 
 /* --- Sections --- */
 .section {
@@ -366,6 +393,14 @@ a { text-decoration: none; color: inherit; }
   font-size: 20px;
   color: var(--text-muted);
   letter-spacing: -0.45px;
+}
+
+#marketplace .section-subtitle {
+  font-size: 25px;
+  line-height: 1.28;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .section-subtitle strong {
   color: var(--text-primary);
@@ -452,6 +487,14 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   border-color: var(--orange);
+}
+
+.product-card:first-child {
+  background: linear-gradient(
+    180deg,
+    rgba(223, 111, 109, 0.07) 0%,
+    rgba(223, 111, 109, 0.1) 100%
+  );
 }
 
 .product-image-wrap {
@@ -803,9 +846,9 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 900px) {
   .hero-title { font-size: 48px; }
+  #marketplace .section-subtitle { font-size: 20px; }
   .steps-grid,
-  .marketplace-grid,
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .marketplace-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
@@ -814,7 +857,7 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 600px) {
   .hero-title { font-size: 36px; }
-  .hero-subtitle { font-size: 18px; }
+  .hero-value-text { font-size: 18px; }
   .hero-ctas { flex-direction: column; width: 100%; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
   .section-title { font-size: 32px; }
