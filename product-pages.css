@@ -166,6 +166,15 @@
   background-clip: text;
 }
 
+/* Solid white hero title (e.g. Adobe Scripts — Figma 82:2) */
+.page-hero--white-title h1 {
+  color: #ffffff;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #ffffff;
+  background-clip: unset;
+}
+
 .page-subtitle {
   font-size: 20px;
   color: var(--text-light);
