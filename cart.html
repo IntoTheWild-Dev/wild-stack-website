@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="product-pages.css" />
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
-<body>
+<body data-xendit-api="/api/create-invoice">
 
   <header class="header">
     <nav class="nav">
@@ -44,7 +44,7 @@
           Cart
         </nav>
         <h1>Shopping Cart</h1>
-        <p class="page-subtitle">Review your tools and proceed to checkout when you’re ready.</p>
+        <p class="page-subtitle">Review your tools and pay securely with <strong style="font-weight: 600">Xendit</strong> (IDR). The checkout opens on Xendit’s hosted page.</p>
       </div>
     </section>
 
@@ -55,7 +55,7 @@
           <div class="cart-items" id="cart-items">
             <h2 class="cart-section-heading">Your items</h2>
 
-            <article class="cart-line" data-unit-cents="2900" data-id="super-localise">
+            <article class="cart-line" data-unit-idr="450000" data-id="super-localise">
               <div class="cart-line-media">
                 <a href="figma-plugins.html" class="cart-line-image-link">
                   <img src="Wild,Stack%20logo/figma.png" alt="" class="cart-line-thumb" width="88" height="88" />
@@ -73,12 +73,12 @@
                     <input class="cart-qty-input" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity" />
                     <button type="button" class="cart-qty-btn" data-action="inc" aria-label="Increase quantity">+</button>
                   </div>
-                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">$29.00</span> / mo</p>
+                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">Rp450.000</span> / mo</p>
                 </div>
               </div>
             </article>
 
-            <article class="cart-line" data-unit-cents="1900" data-id="cmyk">
+            <article class="cart-line" data-unit-idr="350000" data-id="cmyk">
               <div class="cart-line-media">
                 <a href="cmyk.html" class="cart-line-image-link">
                   <img src="Wild,Stack%20logo/figma.png" alt="" class="cart-line-thumb" width="88" height="88" />
@@ -96,7 +96,7 @@
                     <input class="cart-qty-input" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity" />
                     <button type="button" class="cart-qty-btn" data-action="inc" aria-label="Increase quantity">+</button>
                   </div>
-                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">$19.00</span> / mo</p>
+                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">Rp350.000</span> / mo</p>
                 </div>
               </div>
             </article>
@@ -107,19 +107,22 @@
             <dl class="cart-summary-rows">
               <div class="cart-summary-row">
                 <dt>Subtotal</dt>
-                <dd id="cart-subtotal">$48.00</dd>
+                <dd id="cart-subtotal">Rp800.000</dd>
               </div>
               <div class="cart-summary-row cart-summary-row--muted">
-                <dt>Estimated tax</dt>
-                <dd>Calculated at checkout</dd>
+                <dt>Fees</dt>
+                <dd>Shown on Xendit before you pay</dd>
               </div>
               <div class="cart-summary-row cart-summary-row--total">
-                <dt>Due today</dt>
-                <dd id="cart-total">$48.00</dd>
+                <dt>Due today (IDR)</dt>
+                <dd id="cart-total">Rp800.000</dd>
               </div>
             </dl>
-            <a href="mailto:hello@wildstack.studio?subject=Wild%20Stack%20cart%20checkout" class="btn btn-primary btn-full cart-checkout-btn">Proceed to checkout</a>
-            <p class="cart-summary-note">You’ll confirm billing details with our team by email. <a href="marketplace.html">Continue browsing</a> to add more tools.</p>
+            <label class="cart-checkout-email-label" for="payer-email">Email for receipt (Xendit)</label>
+            <input type="email" class="cart-checkout-email" id="payer-email" name="payer_email" autocomplete="email" placeholder="you@company.com" required />
+            <p class="cart-checkout-error" id="cart-checkout-error" role="alert" hidden></p>
+            <button type="button" class="btn btn-primary btn-full cart-checkout-btn" id="xendit-pay">Pay with Xendit</button>
+            <p class="cart-summary-note">Payments are processed by Xendit. Deploy the site with the API route configured (see <code class="cart-inline-code">api/create-invoice.js</code> and <code class="cart-inline-code">.env.example</code>). <a href="marketplace.html">Continue browsing</a>.</p>
           </aside>
 
         </div>
@@ -183,8 +186,14 @@
 
   <script>
     (function () {
-      function formatMoney(cents) {
-        return '$' + (cents / 100).toFixed(2);
+      var fmtIdr = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+      });
+
+      function formatIdr(amount) {
+        return fmtIdr.format(amount);
       }
 
       function parseQty(input) {
@@ -195,13 +204,29 @@
       }
 
       function updateLine(row) {
-        var unit = parseInt(row.getAttribute('data-unit-cents'), 10) || 0;
+        var unit = parseInt(row.getAttribute('data-unit-idr'), 10) || 0;
         var input = row.querySelector('.cart-qty-input');
         var qty = parseQty(input);
         input.value = String(qty);
-        var lineCents = unit * qty;
-        row.querySelector('.cart-line-total-value').textContent = formatMoney(lineCents);
-        return lineCents;
+        var lineAmt = unit * qty;
+        row.querySelector('.cart-line-total-value').textContent = formatIdr(lineAmt);
+        return lineAmt;
+      }
+
+      function getLinesPayload() {
+        var lines = [];
+        document.querySelectorAll('.cart-line').forEach(function (row) {
+          lines.push({
+            id: row.getAttribute('data-id'),
+            quantity: parseQty(row.querySelector('.cart-qty-input'))
+          });
+        });
+        return lines;
+      }
+
+      function setCheckoutDisabled(disabled) {
+        var btn = document.getElementById('xendit-pay');
+        if (btn) btn.disabled = !!disabled;
       }
 
       function recalc() {
@@ -212,8 +237,21 @@
         });
         var subEl = document.getElementById('cart-subtotal');
         var totEl = document.getElementById('cart-total');
-        if (subEl) subEl.textContent = formatMoney(sub);
-        if (totEl) totEl.textContent = formatMoney(sub);
+        if (subEl) subEl.textContent = formatIdr(sub);
+        if (totEl) totEl.textContent = formatIdr(sub);
+        setCheckoutDisabled(rows.length === 0 || sub <= 0);
+      }
+
+      function showCheckoutError(msg) {
+        var el = document.getElementById('cart-checkout-error');
+        if (!el) return;
+        if (msg) {
+          el.textContent = msg;
+          el.hidden = false;
+        } else {
+          el.textContent = '';
+          el.hidden = true;
+        }
       }
 
       document.querySelectorAll('.cart-line').forEach(function (row) {
@@ -229,14 +267,55 @@
         });
         var qtyInput = row.querySelector('.cart-qty-input');
         qtyInput.addEventListener('change', recalc);
-        qtyInput.addEventListener('input', function () {
-          recalc();
-        });
+        qtyInput.addEventListener('input', recalc);
 
         row.querySelector('.cart-line-remove').addEventListener('click', function () {
           row.remove();
           recalc();
         });
+      });
+
+      document.getElementById('xendit-pay').addEventListener('click', function () {
+        showCheckoutError('');
+        var emailEl = document.getElementById('payer-email');
+        var email = emailEl && emailEl.value ? emailEl.value.trim() : '';
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showCheckoutError('Enter a valid email for your Xendit receipt.');
+          emailEl.focus();
+          return;
+        }
+        var lines = getLinesPayload();
+        if (!lines.length) {
+          showCheckoutError('Your cart is empty.');
+          return;
+        }
+        var apiBase = document.body.getAttribute('data-xendit-api') || '/api/create-invoice';
+        var btn = document.getElementById('xendit-pay');
+        var prev = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Redirecting…';
+
+        fetch(apiBase, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ payer_email: email, lines: lines })
+        })
+          .then(function (r) {
+            return r.json().then(function (data) {
+              if (!r.ok) throw new Error(data.error || 'Checkout failed');
+              return data;
+            });
+          })
+          .then(function (data) {
+            if (data.invoice_url) window.location.href = data.invoice_url;
+            else throw new Error('No payment URL returned');
+          })
+          .catch(function (err) {
+            showCheckoutError(err.message || 'Could not start checkout. Is the API deployed and XENDIT_SECRET_KEY set?');
+            btn.disabled = false;
+            btn.textContent = prev;
+            recalc();
+          });
       });
 
       recalc();
