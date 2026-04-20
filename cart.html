@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart — Wild Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="product-pages.css" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <div class="logo-container">
+          <img src="Wild%2CStack%20logo/Logo%20(Only%20Font)%20PNG%204.png" alt="Wild Stack Logo" class="logo-img" />
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
+        <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="cart.html" class="nav-link active">Cart</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero page-hero--compact page-hero--white-title">
+      <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="marketplace.html">Marketplace</a>
+          <span>/</span>
+          Cart
+        </nav>
+        <h1>Shopping Cart</h1>
+        <p class="page-subtitle">Review your tools and proceed to checkout when you’re ready.</p>
+      </div>
+    </section>
+
+    <section class="section cart-page-section">
+      <div class="container">
+        <div class="cart-layout">
+
+          <div class="cart-items" id="cart-items">
+            <h2 class="cart-section-heading">Your items</h2>
+
+            <article class="cart-line" data-unit-cents="2900" data-id="super-localise">
+              <div class="cart-line-media">
+                <a href="figma-plugins.html" class="cart-line-image-link">
+                  <img src="Wild,Stack%20logo/figma.png" alt="" class="cart-line-thumb" width="88" height="88" />
+                </a>
+              </div>
+              <div class="cart-line-body">
+                <div class="cart-line-title-row">
+                  <h3 class="cart-line-title"><a href="figma-plugins.html">Super Localise</a></h3>
+                  <button type="button" class="cart-line-remove" aria-label="Remove Super Localise from cart">Remove</button>
+                </div>
+                <p class="cart-line-meta">Figma Plug-in · Billed monthly</p>
+                <div class="cart-line-footer">
+                  <div class="cart-qty" role="group" aria-label="Quantity for Super Localise">
+                    <button type="button" class="cart-qty-btn" data-action="dec" aria-label="Decrease quantity">−</button>
+                    <input class="cart-qty-input" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity" />
+                    <button type="button" class="cart-qty-btn" data-action="inc" aria-label="Increase quantity">+</button>
+                  </div>
+                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">$29.00</span> / mo</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="cart-line" data-unit-cents="1900" data-id="cmyk">
+              <div class="cart-line-media">
+                <a href="cmyk.html" class="cart-line-image-link">
+                  <img src="Wild,Stack%20logo/figma.png" alt="" class="cart-line-thumb" width="88" height="88" />
+                </a>
+              </div>
+              <div class="cart-line-body">
+                <div class="cart-line-title-row">
+                  <h3 class="cart-line-title"><a href="cmyk.html">CMYK Print Ready</a></h3>
+                  <button type="button" class="cart-line-remove" aria-label="Remove CMYK Print Ready from cart">Remove</button>
+                </div>
+                <p class="cart-line-meta">Figma Plug-in · Billed monthly</p>
+                <div class="cart-line-footer">
+                  <div class="cart-qty" role="group" aria-label="Quantity for CMYK Print Ready">
+                    <button type="button" class="cart-qty-btn" data-action="dec" aria-label="Decrease quantity">−</button>
+                    <input class="cart-qty-input" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity" />
+                    <button type="button" class="cart-qty-btn" data-action="inc" aria-label="Increase quantity">+</button>
+                  </div>
+                  <p class="cart-line-total" aria-live="polite"><span class="cart-line-total-value">$19.00</span> / mo</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="cart-summary" aria-labelledby="order-summary-heading">
+            <h2 id="order-summary-heading" class="cart-summary-heading">Order summary</h2>
+            <dl class="cart-summary-rows">
+              <div class="cart-summary-row">
+                <dt>Subtotal</dt>
+                <dd id="cart-subtotal">$48.00</dd>
+              </div>
+              <div class="cart-summary-row cart-summary-row--muted">
+                <dt>Estimated tax</dt>
+                <dd>Calculated at checkout</dd>
+              </div>
+              <div class="cart-summary-row cart-summary-row--total">
+                <dt>Due today</dt>
+                <dd id="cart-total">$48.00</dd>
+              </div>
+            </dl>
+            <a href="mailto:hello@wildstack.studio?subject=Wild%20Stack%20cart%20checkout" class="btn btn-primary btn-full cart-checkout-btn">Proceed to checkout</a>
+            <p class="cart-summary-note">You’ll confirm billing details with our team by email. <a href="marketplace.html">Continue browsing</a> to add more tools.</p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="cta-content">
+        <h2 class="cta-title">Questions before you buy?</h2>
+        <p class="cta-subtitle">Book a free consultation and we’ll help you pick the right stack for your workflow.</p>
+        <div class="cta-buttons">
+          <a href="mailto:hello@wildstack.studio" class="btn btn-white btn-large">Book Free Consultation</a>
+          <a href="marketplace.html" class="btn btn-outline-white btn-large">Back to Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="pricing">
+    <div class="footer-inner container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="Wild%2CStack%20logo/Logo%20(Only%20Font)%20PNG%204.png" alt="Wild Stack" class="footer-logo-img" />
+          </div>
+          <p class="footer-tagline">Automation Solutions for Modern Businesses</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Products</h4>
+          <ul class="footer-links">
+            <li><a href="figma-plugins.html">Super Localise</a></li>
+            <li><a href="cmyk.html">CMYK Print Ready</a></li>
+            <li><a href="adobe-scripts.html">Adobe Scripts</a></li>
+            <li><a href="motion-graphics.html">Motion Graphics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Don't get left behind.</h4>
+          <p class="footer-newsletter-desc">Get the latest automation tools and workflow hacks delivered straight to your inbox.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input" />
+            <button type="button" class="btn btn-primary">Join the Wild Side</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Wild Stack. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function formatMoney(cents) {
+        return '$' + (cents / 100).toFixed(2);
+      }
+
+      function parseQty(input) {
+        var n = parseInt(input.value, 10);
+        if (isNaN(n) || n < 1) return 1;
+        if (n > 99) return 99;
+        return n;
+      }
+
+      function updateLine(row) {
+        var unit = parseInt(row.getAttribute('data-unit-cents'), 10) || 0;
+        var input = row.querySelector('.cart-qty-input');
+        var qty = parseQty(input);
+        input.value = String(qty);
+        var lineCents = unit * qty;
+        row.querySelector('.cart-line-total-value').textContent = formatMoney(lineCents);
+        return lineCents;
+      }
+
+      function recalc() {
+        var rows = document.querySelectorAll('.cart-line');
+        var sub = 0;
+        rows.forEach(function (row) {
+          sub += updateLine(row);
+        });
+        var subEl = document.getElementById('cart-subtotal');
+        var totEl = document.getElementById('cart-total');
+        if (subEl) subEl.textContent = formatMoney(sub);
+        if (totEl) totEl.textContent = formatMoney(sub);
+      }
+
+      document.querySelectorAll('.cart-line').forEach(function (row) {
+        row.querySelectorAll('.cart-qty-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var input = row.querySelector('.cart-qty-input');
+            var q = parseQty(input);
+            if (btn.getAttribute('data-action') === 'inc') q = Math.min(99, q + 1);
+            else q = Math.max(1, q - 1);
+            input.value = String(q);
+            recalc();
+          });
+        });
+        var qtyInput = row.querySelector('.cart-qty-input');
+        qtyInput.addEventListener('change', recalc);
+        qtyInput.addEventListener('input', function () {
+          recalc();
+        });
+
+        row.querySelector('.cart-line-remove').addEventListener('click', function () {
+          row.remove();
+          recalc();
+        });
+      });
+
+      recalc();
+    })();
+  </script>
+
+</body>
+</html>
