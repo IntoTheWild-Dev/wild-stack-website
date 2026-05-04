@@ -619,8 +619,7 @@ img {
   }
 
   .integration-card__visual {
-    padding: 32px 24px;
-    min-height: unset;
+    display: none;
   }
 
   .site-footer__inner {
