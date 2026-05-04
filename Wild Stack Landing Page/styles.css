@@ -443,6 +443,16 @@ img {
   margin-bottom: 24px;
 }
 
+.integration-card__tagline {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--accent);
+  letter-spacing: -0.2px;
+}
+
 .integration-card__body {
   font-family: var(--font-body);
   font-weight: 400;
