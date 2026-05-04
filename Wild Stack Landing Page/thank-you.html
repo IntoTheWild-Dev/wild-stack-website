@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're on the list — Wild Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .thankyou-section {
+      min-height: calc(100vh - 68px - 174px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .thankyou-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .thankyou-card__icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(223, 111, 109, 0.12);
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thankyou-card__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .thankyou-card__eyebrow {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .thankyou-card__heading {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .thankyou-card__body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 440px;
+    }
+
+    .thankyou-card__back {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Header ─── -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/logo-nav.png" alt="Wild Stack" width="168" height="45">
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thankyou-section">
+      <div class="thankyou-card">
+
+        <div class="thankyou-card__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+
+        <p class="thankyou-card__eyebrow">You're in</p>
+
+        <h1 class="thankyou-card__heading">You're on<br>the list.</h1>
+
+        <p class="thankyou-card__body">
+          Thanks for signing up — we'll be in touch as soon as early access opens. Keep an eye on your inbox.
+        </p>
+
+        <a href="index.html" class="btn btn--outline thankyou-card__back">← Back to Wild Stack</a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="index.html" class="site-footer__logo">
+        <img src="assets/logo-nav.png" alt="Wild Stack" width="168" height="45">
+      </a>
+      <p class="site-footer__copy">© 2026 Wildstack. Precision Engineering for Creative Flow.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

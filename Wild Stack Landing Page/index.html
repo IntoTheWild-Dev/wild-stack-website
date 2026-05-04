@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wild Stack — Creative Automation Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ─── Header ─── -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img src="assets/logo-nav.png" alt="Wild Stack" width="168" height="45">
+      </a>
+      <a href="#waitlist" class="btn btn--coral">Join Waitlist</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__headline">
+          EARLY ACCESS TO OUR <span class="accent">CREATIVE AUTOMATION</span> SOLUTIONS
+        </h1>
+        <p class="hero__subtitle">
+          The ultimate suite of precision tools for Figma/Adobe power users. Streamline repetition and focus on what matters most — The Creative Vision.
+        </p>
+        <blockquote class="hero__quote">
+          <p>"We build the tools we wish we had. Wildstack is about reclaiming the hours lost to manual tasks."</p>
+          <cite>ENGINEERING CREATIVE ENERGY</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ─── Waitlist Form ─── -->
+    <section class="waitlist-section" id="waitlist">
+      <div class="container waitlist-section__inner">
+        <div class="waitlist-card">
+          <h2 class="waitlist-card__heading">RESERVE YOUR SPOT</h2>
+          <form class="waitlist-form" action="https://formspree.io/f/mqenplkg" method="POST">
+            <input type="hidden" name="_next" value="thank-you.html">
+            <input type="hidden" name="_subject" value="New Waitlist Signup — Wild Stack">
+
+            <div class="form-field">
+              <label class="form-label" for="full-name">FULL NAME</label>
+              <input class="form-input" type="text" id="full-name" name="full_name" placeholder="John Doe" autocomplete="name">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="email">EMAIL ADDRESS</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="john@creative-studio.com" autocomplete="email">
+            </div>
+
+            <div class="form-field">
+              <span class="form-label">WHICH PRODUCT INTERESTS YOU MOST?</span>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="figma-super-localize">
+                  <span class="checkbox-box"></span>
+                  Figma Super Localize
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="ae-compswap">
+                  <span class="checkbox-box"></span>
+                  After Effects CompSwap
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="indesign-assetswap">
+                  <span class="checkbox-box"></span>
+                  Indesign AssetSwap
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="photoshop-assetswap">
+                  <span class="checkbox-box"></span>
+                  Photoshop AssetSwap
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="figma-motion">
+                  <span class="checkbox-box"></span>
+                  Figma Motion
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="photoshop-figma">
+                  <span class="checkbox-box"></span>
+                  PhotoShop - Figma
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="figma-cmyk">
+                  <span class="checkbox-box"></span>
+                  Figma CMYK
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--submit">JOIN THE WAITLIST</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Features Grid ─── -->
+    <section class="features-section">
+      <div class="container features-grid">
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="https://www.figma.com/api/mcp/asset/b5495217-afdd-4b33-a033-ddbf4bb072b9" alt="" width="36" height="44">
+          </div>
+          <h3 class="feature-card__heading">PREMIUM ACCESS</h3>
+          <p class="feature-card__body">Be the first to test our beta builds and gain lifetime premium status upon public release.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="https://www.figma.com/api/mcp/asset/726feb32-4491-49fe-87b9-4481aa839442" alt="" width="36" height="44">
+          </div>
+          <h3 class="feature-card__heading">EARLY BIRD DISCOUNTS</h3>
+          <p class="feature-card__body">Secure exclusive tiered pricing plans locked in for your account before we scale globally.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="https://www.figma.com/api/mcp/asset/a469473a-fb60-470a-b642-ba04b4637275" alt="" width="36" height="44">
+          </div>
+          <h3 class="feature-card__heading">FEATURE REQUESTS</h3>
+          <p class="feature-card__body">Direct access to our engineering team to influence the roadmap and suggest custom workflows.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Integration Section ─── -->
+    <section class="integration-section">
+      <div class="container">
+        <div class="integration-card">
+
+          <div class="integration-card__text">
+            <p class="integration-card__eyebrow">ENGINEERING PRECISION</p>
+            <h2 class="integration-card__heading">THE 'WILD' STACK<br>INTEGRATION</h2>
+            <p class="integration-card__body">Our specialized component for tool stacks provides a vertical workflow that stays out of your way while keeping precision at your fingertips.</p>
+            <a href="#" class="btn btn--outline">Read the Whitepaper</a>
+          </div>
+
+          <div class="integration-card__visual">
+            <div class="wild-component">
+              <div class="wild-component__toolbar">
+                <div class="toolbar-btn toolbar-btn--active">
+                  <img src="https://www.figma.com/api/mcp/asset/dcba5cf6-3208-43c0-80c9-ce46b44728de" alt="" width="24" height="28">
+                  <span class="toolbar-btn__indicator"></span>
+                </div>
+                <hr class="toolbar-divider">
+                <div class="toolbar-btn">
+                  <img src="https://www.figma.com/api/mcp/asset/745d989e-2cce-480d-bbbd-3f30a4633d01" alt="" width="24" height="28">
+                </div>
+                <div class="toolbar-btn">
+                  <img src="https://www.figma.com/api/mcp/asset/a329d1bf-c5e0-4e24-9182-7c5d52a3d961" alt="" width="24" height="28">
+                </div>
+                <div class="toolbar-btn">
+                  <img src="https://www.figma.com/api/mcp/asset/7278cd8c-61cc-43cf-826a-1e0444321f9c" alt="" width="24" height="28">
+                </div>
+                <hr class="toolbar-divider">
+                <div class="toolbar-btn">
+                  <img src="https://www.figma.com/api/mcp/asset/4456ade9-0c5b-425a-98a0-64fc7ea83df2" alt="" width="24" height="28">
+                </div>
+              </div>
+              <div class="wild-component__preview">
+                <img src="https://www.figma.com/api/mcp/asset/cd3f7af6-bc05-4da2-a815-cac73e102f77" alt="Technical UI Preview" width="256" height="256">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="#" class="site-footer__logo">
+        <img src="assets/logo-nav.png" alt="Wild Stack" width="168" height="45">
+      </a>
+      <p class="site-footer__copy">© 2026 Wildstack. Precision Engineering for Creative Flow.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
