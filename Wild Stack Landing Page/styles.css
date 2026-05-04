@@ -445,12 +445,12 @@ img {
 
 .integration-card__tagline {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 700;
   font-style: italic;
-  font-size: 22px;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--accent);
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .integration-card__body {
