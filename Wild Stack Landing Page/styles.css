@@ -215,6 +215,21 @@ img {
   font-style: normal;
 }
 
+/* ─── Promo Video ─── */
+.video-section {
+  padding: 0 0 64px;
+}
+
+.promo-video {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  display: block;
+  max-height: 640px;
+  object-fit: cover;
+  background: var(--bg-card);
+}
+
 /* ─── Waitlist Section ─── */
 .waitlist-section {
   padding: 64px 0;
