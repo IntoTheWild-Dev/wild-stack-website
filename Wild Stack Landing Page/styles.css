@@ -390,10 +390,10 @@ img {
   align-items: flex-end;
 }
 
-.feature-card__icon img {
+.feature-card__icon img,
+.feature-card__icon svg {
   height: 44px;
   width: auto;
-  transform: scaleY(-1);
 }
 
 .feature-card__heading {
@@ -520,8 +520,9 @@ img {
   cursor: pointer;
 }
 
-.toolbar-btn img {
-  transform: scaleY(-1);
+.toolbar-btn img,
+.toolbar-btn svg {
+  display: block;
 }
 
 .toolbar-btn--active {
