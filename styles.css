@@ -283,8 +283,9 @@ a { text-decoration: none; color: inherit; }
 
 .hero-value-inner {
   border: 1px solid var(--orange);
-  padding: 40px 60px;
-  max-width: 900px;
+  border-radius: 9px;
+  padding: 48px 80px;
+  max-width: 1280px;
   width: 100%;
 }
 
@@ -387,8 +388,6 @@ a { text-decoration: none; color: inherit; }
 }
 .section-alt {
   background: #121414;
-  border-top: 1px solid rgba(223,111,109,0.3);
-  border-bottom: 1px solid rgba(223,111,109,0.3);
 }
 
 .section-header {
@@ -548,7 +547,7 @@ a { text-decoration: none; color: inherit; }
   object-fit: contain;
 }
 .product-image-logo--right {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 .product-image-overlay {
   position: absolute;
