@@ -35,7 +35,7 @@
 ## Colour System
 | Token | Value | Used for |
 |-------|-------|----------|
-| `--orange` / `--accent` | `#DF6F6D` | Coral accent, all card borders, hero value bar |
+| `--orange` / `--accent` | `#DF6F6D` | Coral accent (text/icons only — card borders removed) |
 | `--bg-card` | `#1E2020` | All card/box backgrounds site-wide |
 | `--grad-hero` | `#121414` | All hero section backgrounds |
 | `--grad-cta` | `#121414` | All CTA section backgrounds |
@@ -86,6 +86,20 @@
 - [x] Product page heroes: left text + right image split layout (all 4 pages via shared CSS)
 - [x] Mobile hero (<900px): stacks to column, image hidden
 - [x] Nav logo + "Why Choose" logo: removed blue glow site-wide
+
+### Session 5 — Design polish (2026-05-25)
+- [x] "View All Automations" button: changed from coral `btn-primary` → `btn-outline-white btn-large` to match hero style
+- [x] Marketplace card "Buy Now" buttons: changed from coral full-width → `btn-white btn-large` (white, narrower, header-matched)
+- [x] Feature list check icons: recoloured from green → coral via CSS `filter` on `.check-icon`
+- [x] CTA headline site-wide: "Stop" and "Start" wrapped in `<span class="text-white">` — coral text kept for rest
+- [x] Added `.text-white { color: #ffffff }` utility class to `styles.css`
+- [x] Marketplace hero gap: reduced `padding-top` from 64px → 40px on `.marketplace-page-section`
+- [x] Marketplace category label renamed: "Motion Graphics" → "Adobe Solutions"
+- [x] Dual InDesign/Photoshop icons: tightened gap with `gap: 4px` + `margin: 0 -25px` to compensate for built-in PNG transparent padding (~43px per side)
+- [x] Four product pages restored: `figma-plugins.html`, `adobe-scripts.html`, `motion-graphics.html`, `cmyk.html` — CTA section + footer were missing (truncated by previous regex); rebuilt and restored
+- [x] Cart page CTA headline: `color: #ffffff`, `white-space: nowrap`, `width: max-content` for proper centering
+- [x] Cart page layout: `.cart-section-heading` moved above `.cart-layout` so first item card top-aligns with Order Summary box
+- [x] Coral borders removed from every card/box site-wide (`styles.css` + `product-pages.css`): `border-color` reverts to `var(--border)` (subtle grey `rgba(73,101,122,0.28)`) — decorative accent lines on `.challenge-block` and `.solution-block` preserved
 
 ## Pending
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
