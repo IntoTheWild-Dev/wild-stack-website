@@ -406,7 +406,6 @@ a { text-decoration: none; color: inherit; }
   margin-right: auto;
 }
 .section-subtitle strong {
-  color: var(--text-primary);
   font-weight: 700;
 }
 .subtitle-accent {
@@ -492,7 +491,7 @@ a { text-decoration: none; color: inherit; }
   border-color: var(--orange);
 }
 
-.product-card:first-child {
+.product-card {
   background: linear-gradient(
     180deg,
     rgba(223, 111, 109, 0.07) 0%,
@@ -532,8 +531,10 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 .product-image-wrap--dual .product-image-logo {
-  width: 120px;
-  height: 120px;
+  height: 100px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
 }
 .product-image-overlay {
   position: absolute;
