@@ -5,7 +5,10 @@
 
 /* ─── Marketplace Page ───────────────────── */
 .page-hero--compact .page-hero-inner {
+  max-width: 1504px;
+  margin: 0 auto;
   padding: 48px 16px;
+  width: 100%;
 }
 
 .marketplace-page-section {
