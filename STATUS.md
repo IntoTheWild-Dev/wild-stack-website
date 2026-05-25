@@ -72,6 +72,11 @@
 - [x] "Why Choose" section: `#121414`
 - [x] Marketplace section: `#121414`
 
+### Hero App Bar — Session 3 (2026-05-25)
+- [x] Removed "indesign updater" tile from hero app strip (5 tiles remain)
+- [x] Removed container box around app tiles (no border/background — tiles float free)
+- [x] New tiles (indesign assetswap, photoshop assetswap) rebuilt as CSS text tiles to match existing style: same `#0f172b` bg, `wild | stack` brand mark, `.hero-app-line1/.hero-app-line2` text system
+
 ## Pending
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
