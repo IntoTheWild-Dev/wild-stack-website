@@ -785,6 +785,7 @@ a { text-decoration: none; color: inherit; }
   height: auto;
   object-fit: contain;
   display: block;
+  margin-left: -16px;
 }
 .footer-tagline {
   font-size: 14px;
