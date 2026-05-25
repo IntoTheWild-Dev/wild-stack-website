@@ -281,7 +281,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-value-inner {
-  border: 1px solid var(--orange);
+  border: 1px solid var(--border);
   border-radius: 9px;
   padding: 48px 80px;
   max-width: 1280px;
@@ -468,7 +468,6 @@ a { text-decoration: none; color: inherit; }
   padding: 24px;
   min-height: 222px;
   background: #1E2020;
-  border-color: var(--orange);
 }
 
 .step-number-bg {
@@ -509,7 +508,6 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   background: #1E2020;
-  border-color: var(--orange);
 }
 
 .product-image-wrap {
@@ -623,7 +621,6 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   text-align: center;
   background: #1E2020;
-  border-color: var(--orange);
 }
 
 .benefit-icon-wrap {
