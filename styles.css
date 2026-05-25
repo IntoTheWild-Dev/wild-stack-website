@@ -551,6 +551,7 @@ a { text-decoration: none; color: inherit; }
   width: auto;
   max-width: 140px;
   object-fit: contain;
+  margin: 0 -25px;
 }
 .product-image-logo--right {
   transform: translateY(-4px);
