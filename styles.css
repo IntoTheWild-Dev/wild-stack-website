@@ -378,6 +378,20 @@ a { text-decoration: none; color: inherit; }
 .hero-app-line1 { font-size: 11px; }
 .hero-app-line2 { font-size: 13px; }
 
+.hero-app-brand {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.3px;
+  line-height: 1;
+  z-index: 1;
+}
+.hero-app-brand-pipe { color: var(--orange); }
+
 /* Subtitle moved to .hero-value-bar (.hero-value-text) per Figma */
 
 /* --- Sections --- */
