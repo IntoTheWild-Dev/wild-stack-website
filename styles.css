@@ -332,14 +332,13 @@ a { text-decoration: none; color: inherit; }
 .hero-apps-wrap {
   display: flex;
   gap: 8px;
-  background: #f6eaea;
-  border: 1px solid #df6f6d;
-  border-radius: 9px;
-  padding: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   margin: 0 auto -70px;
   position: relative;
   z-index: 3;
-  box-shadow: 0 14px 28px -7px rgba(0,0,0,0.4);
 }
 
 .hero-app-tile {
