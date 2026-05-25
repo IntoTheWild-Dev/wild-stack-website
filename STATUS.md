@@ -35,10 +35,11 @@
 ## Colour System
 | Token | Value | Used for |
 |-------|-------|----------|
-| `--orange` / `--accent` | `#DF6F6D` | Coral accent throughout |
+| `--orange` / `--accent` | `#DF6F6D` | Coral accent, all card borders, hero value bar |
+| `--bg-card` | `#1E2020` | All card/box backgrounds site-wide |
 | `--grad-hero` | `#121414` | All hero section backgrounds |
 | `--grad-cta` | `#121414` | All CTA section backgrounds |
-| Section dividers | `rgba(223,111,109,0.3)` | Coral border on `.section-alt` / `.product-section--alt` |
+| Section dividers | _(removed)_ | Coral section borders removed from all pages |
 
 ## Completed — 2026-05-25
 ### Deployment & Infrastructure
@@ -57,21 +58,20 @@
 - [x] "Other feature request" checkbox + expandable text field added to waitlist form
 - [x] Quote box changed to coral outline only (transparent background, white text)
 
-### Main Site UI
-- [x] App tiles repositioned to straddle hero/coral section boundary
-- [x] "Cut production time by 80%" fixed to coral colour (CSS specificity fix)
-- [x] Adobe Id + Ps icons aligned to same 140px height as Figma/Ae icons
-- [x] Ps icon nudged up 2px for better vertical alignment with Id
-- [x] All product cards given consistent gradient background
-- [x] Hero headline: "Automate" and "asset updates" now coral
-- [x] All hero sections: solid `#121414` (was blue/coral gradient) — all pages
-- [x] All CTA sections: solid `#121414` (was gradient) — all pages
-- [x] "Why Choose" section: `#121414` (was blue-grey gradient)
-- [x] Marketplace section: `#121414` (matches all other sections)
-- [x] Section divider lines: coral `rgba(223,111,109,0.3)` (was blue-grey)
-- [x] Changes applied across `styles.css` AND `product-pages.css` (all subpages covered)
+### Main Site UI — Session 2 (2026-05-25)
+- [x] Hero value bar redesigned: `#121414` background, coral `1px` border box, rounded corners (9px), 2-line text
+- [x] Hero CTA button gap reduced (64px → 32px)
+- [x] Two new app tiles added to hero: `indesign assetswap` + `photoshop assetswap` (all 6 in one row)
+- [x] Ps icon nudged to `translateY(-4px)` for inline alignment with Id
+- [x] All section divider lines removed — main site (`styles.css`) and all subpages (`product-pages.css`)
+- [x] All card/box backgrounds: `#1E2020` site-wide (CSS variable `--bg-card` updated)
+- [x] All card/box borders: coral `var(--orange)` — product cards, step cards, benefit cards, pricing tiers, feature items, ICP cards, bundle cards, teaser cards, available cards
+- [x] Product card image area (top section): background updated to `#1E2020`, gradient overlay updated to match
+- [x] Hero headline: "Automate" and "asset updates" coral
+- [x] All hero/CTA sections: solid `#121414` across all pages
+- [x] "Why Choose" section: `#121414`
+- [x] Marketplace section: `#121414`
 
 ## Pending
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
-- [ ] **Hero value bar (coral section)** — the salmon/coral band below the app tiles on the main site still needs a design update. Currently a solid coral fill with dark text. Needs to be redesigned (see screenshot shared in session — darker background direction)

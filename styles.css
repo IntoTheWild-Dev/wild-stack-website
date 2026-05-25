@@ -37,7 +37,7 @@ a { text-decoration: none; color: inherit; }
   --bg-card-overlay: #0f172b;
   --bg-input:      #1d293d;
   --bg-alt:        rgba(73, 101, 122, 0.18);
-  --bg-card:       rgba(73, 101, 122, 0.1);
+  --bg-card:       #1E2020;
   --border:        rgba(73, 101, 122, 0.28);
   --border-header: rgba(73, 101, 122, 0.22);
 
@@ -508,7 +508,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   height: 192px;
   overflow: hidden;
-  background: #0f172b;
+  background: #1E2020;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -522,7 +522,7 @@ a { text-decoration: none; color: inherit; }
 .product-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #0f172b 0%, transparent 100%);
+  background: linear-gradient(to top, #1E2020 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -547,7 +547,7 @@ a { text-decoration: none; color: inherit; }
 .product-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #0f172b 0%, transparent 100%);
+  background: linear-gradient(to top, #1E2020 0%, transparent 100%);
 }
 
 .product-content {
