@@ -186,7 +186,7 @@ img {
 
 .hero__quote {
   border: 1px solid var(--accent);
-  background: rgba(26, 28, 28, 0.3);
+  background: transparent;
   padding: 20px 40px 22px;
   max-width: 768px;
   display: flex;
