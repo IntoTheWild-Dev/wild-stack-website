@@ -229,7 +229,7 @@ a { text-decoration: none; color: inherit; }
 /* --- Hero --- */
 .hero {
   min-height: min(100vh, 1040px);
-  background: var(--grad-hero);
+  background: #121414;
   padding-top: 73px;
   display: flex;
   flex-direction: column;
@@ -242,7 +242,7 @@ a { text-decoration: none; color: inherit; }
 .hero-bg-gradient {
   position: absolute;
   inset: 0;
-  background: var(--grad-hero);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -375,7 +375,7 @@ a { text-decoration: none; color: inherit; }
   padding: 80px 0;
 }
 .section-alt {
-  background: linear-gradient(135deg, rgba(73,101,122,0.22) 0%, rgba(26,47,61,0.35) 100%);
+  background: #121414;
   border-top: 1px solid rgba(73,101,122,0.2);
   border-bottom: 1px solid rgba(73,101,122,0.2);
 }
@@ -531,9 +531,9 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 .product-image-wrap--dual .product-image-logo {
-  height: 100px;
+  height: 140px;
   width: auto;
-  max-width: 130px;
+  max-width: 140px;
   object-fit: contain;
 }
 .product-image-overlay {
@@ -705,7 +705,7 @@ a { text-decoration: none; color: inherit; }
 /* --- CTA Section --- */
 .cta-section {
   padding: 80px 384px;
-  background: linear-gradient(151deg, rgba(26,47,61,0.8) 25%, #080f14 54%, rgba(223,111,109,0.2) 102%);
+  background: #121414;
   text-align: center;
 }
 
