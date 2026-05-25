@@ -469,15 +469,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .step-number-bg {
-  position: absolute;
-  top: 0;
-  right: 16px;
-  font-size: 96px;
-  font-weight: 700;
-  color: rgba(43, 127, 255, 0.05);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
+  display: none;
 }
 
 .step-badge {
@@ -705,7 +697,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  color: var(--text-heading);
+  color: #ffffff;
 }
 
 .why-choose-logo-wrap {
@@ -741,7 +733,7 @@ a { text-decoration: none; color: inherit; }
 .cta-title {
   font-size: 48px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--orange);
   line-height: 1.1;
   letter-spacing: 0.35px;
   max-width: 534px;
