@@ -74,3 +74,4 @@
 ## Pending
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
+- [ ] **Hero value bar (coral section)** — the salmon/coral band below the app tiles on the main site still needs a design update. Currently a solid coral fill with dark text. Needs to be redesigned (see screenshot shared in session — darker background direction)
