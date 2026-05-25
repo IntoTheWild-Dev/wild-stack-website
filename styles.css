@@ -543,6 +543,9 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
   flex-shrink: 0;
 }
+.product-image-wrap--dual {
+  gap: 4px;
+}
 .product-image-wrap--dual .product-image-logo {
   height: 140px;
   width: auto;
