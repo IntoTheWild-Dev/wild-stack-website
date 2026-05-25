@@ -77,6 +77,16 @@
 - [x] Removed container box around app tiles (no border/background — tiles float free)
 - [x] New tiles (indesign assetswap, photoshop assetswap) rebuilt as CSS text tiles to match existing style: same `#0f172b` bg, `wild | stack` brand mark, `.hero-app-line1/.hero-app-line2` text system
 
+### Session 4 — Design polish (2026-05-25)
+- [x] "Super Localise" → "Super Localize" — corrected across all live pages
+- [x] Solution block border + label: blue → coral site-wide (`product-pages.css`)
+- [x] Feature number badges, ICP tick marks, bundle icons: gradient → solid white site-wide
+- [x] Placeholder testimonials section removed from all 4 product pages
+- [x] figma-plugins.html hero banner: swapped to production asset `Super-Localize-Banner-1920x1080.png`
+- [x] Product page heroes: left text + right image split layout (all 4 pages via shared CSS)
+- [x] Mobile hero (<900px): stacks to column, image hidden
+- [x] Nav logo + "Why Choose" logo: removed blue glow site-wide
+
 ## Pending
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere

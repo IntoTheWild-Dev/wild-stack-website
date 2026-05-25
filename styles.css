@@ -185,7 +185,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px 0px rgba(73, 101, 122, 0.5);
+
   flex-shrink: 0;
 }
 
@@ -711,7 +711,7 @@ a { text-decoration: none; color: inherit; }
 .why-choose-logo-wrap {
   height: 52px;
   border-radius: var(--radius-md);
-  box-shadow: 0 0 20px 0 rgba(73, 101, 122, 0.5);
+
   display: inline-flex;
   align-items: center;
   overflow: hidden;
