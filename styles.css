@@ -451,6 +451,8 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   padding: 24px;
   min-height: 222px;
+  background: #1E2020;
+  border-color: var(--orange);
 }
 
 .step-number-bg {
@@ -498,15 +500,8 @@ a { text-decoration: none; color: inherit; }
 .product-card {
   display: flex;
   flex-direction: column;
+  background: #1E2020;
   border-color: var(--orange);
-}
-
-.product-card {
-  background: linear-gradient(
-    180deg,
-    rgba(223, 111, 109, 0.07) 0%,
-    rgba(223, 111, 109, 0.1) 100%
-  );
 }
 
 .product-image-wrap {
@@ -614,6 +609,7 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: #1E2020;
   border-color: var(--orange);
 }
 
