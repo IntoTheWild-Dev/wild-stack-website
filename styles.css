@@ -311,6 +311,10 @@ a { text-decoration: none; color: inherit; }
   color: var(--orange);
 }
 
+.text-white {
+  color: #ffffff;
+}
+
 .hero-tagline {
   font-size: 18px;
   font-weight: 400;
