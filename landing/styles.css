@@ -363,6 +363,22 @@ img {
   transform: rotate(45deg) translateY(-1px);
 }
 
+.other-input-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+  padding-left: 40px;
+}
+
+.other-input-wrap.visible {
+  grid-template-rows: 1fr;
+}
+
+.other-input-wrap > input {
+  overflow: hidden;
+  min-height: 0;
+}
+
 /* ─── Features Grid ─── */
 .features-section {
   padding: 69px 0 72px;

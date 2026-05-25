@@ -118,6 +118,14 @@
                   <span class="checkbox-box"></span>
                   Figma CMYK
                 </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="product" value="other" id="other-checkbox">
+                  <span class="checkbox-box"></span>
+                  Other feature request
+                </label>
+                <div class="other-input-wrap" id="other-input-wrap">
+                  <input type="text" name="other_feature" class="form-input" placeholder="Tell us what you'd like to see...">
+                </div>
               </div>
             </div>
 
@@ -239,6 +247,15 @@
       <p class="site-footer__copy">© 2026 Wildstack. Precision Engineering for Creative Flow.</p>
     </div>
   </footer>
+
+  <script>
+    const otherCheckbox = document.getElementById('other-checkbox');
+    const otherInputWrap = document.getElementById('other-input-wrap');
+    otherCheckbox.addEventListener('change', function () {
+      otherInputWrap.classList.toggle('visible', this.checked);
+      if (!this.checked) otherInputWrap.querySelector('input').value = '';
+    });
+  </script>
 
 </body>
 </html>
