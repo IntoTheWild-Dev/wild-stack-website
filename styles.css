@@ -593,6 +593,7 @@ a { text-decoration: none; color: inherit; }
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(58%) sepia(40%) saturate(700%) hue-rotate(305deg) brightness(87%);
 }
 
 .marketplace-footer {
