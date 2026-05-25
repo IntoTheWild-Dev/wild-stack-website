@@ -54,8 +54,8 @@ a { text-decoration: none; color: inherit; }
   --grad-brand:    linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
   --grad-btn:      linear-gradient(90deg, #49657A 0%, #DF6F6D 100%);
   --grad-step:     linear-gradient(135deg, #49657A 0%, #DF6F6D 100%);
-  --grad-hero:     linear-gradient(147deg, rgba(26,47,61,0.8) 0%, #080f14 55%, rgba(223,111,109,0.2) 100%);
-  --grad-cta:      linear-gradient(90deg, rgba(73,101,122,0.65) 0%, rgba(223,111,109,0.45) 100%);
+  --grad-hero:     #121414;
+  --grad-cta:      #121414;
 
   --radius-sm:     8px;
   --radius-md:     10px;
