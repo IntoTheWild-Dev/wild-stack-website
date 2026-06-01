@@ -115,8 +115,27 @@
 - [x] Hero product tiles (`.hero-apps-wrap`) **hidden** — `display: none` for now
 - [x] Hero value bar (`Save time…`) pulled up, padding normalised (110px → 60px top)
 
+### Session 7 — Full site redesign (2026-06-01)
+- [x] Container: max-width 1504px → 1280px, padding 16px → 48px (matches hero)
+- [x] Section padding: 80px → 120px; section-header margin-bottom: 64px → 80px
+- [x] CTA section: centred → two-column split (left text + right dashed placeholder), site-wide (6 pages)
+- [x] Hero: `min-height: calc(100vh - 80px)` on hero-inner — value bar scrolls below fold on load
+- [x] Product card icons: left-aligned (padding-left 24px matches text)
+- [x] Subtitle accent: `display: block; margin-bottom: 14px` — gap between "Cut production time 80%" and subline
+- [x] Nav dropdown: Solutions ▾ with 4 product pages, hover-stable (padding-bottom bridge), no icons
+- [x] Nav dropdown order: Wild Super Localize → Wild CMYK → Motion Graphics → Adobe Plugins
+- [x] Product page heroes: max-width 1280px, padding 100px 48px 80px, min-height calc(100vh - 80px)
+- [x] All product page heroes: square dashed placeholder (460×460, no fill) — replaces banner image + missing right cols
+- [x] Marketplace hero: full two-column (page-hero-row), square dashed placeholder
+- [x] Marketplace products: replaced large card grid with horizontal solution-row layout (left: icon+name, right: bordered info card)
+- [x] Solution icons doubled: 72px → 128px
+- [x] Removed TBC/mo pricing text from all solution rows
+- [x] Adobe row: new `ADOBE NEW Icon.png`, renamed to "Adobe Asset Updater"
+- [x] Adobe plugins page: all "InDesign" references → "Adobe" in titles/headings/CTAs
+- [x] `ADOBE NEW Icon.png` copied to `Wild,Stack logo/`
+
 ## Pending
-- [ ] Drop image or video into `.hero-visual` right column (HTML: `<div class="hero-visual">`)
-- [ ] Decide whether to restore product tiles or leave them hidden permanently
+- [ ] Drop image or video into right-column placeholders (hero, CTA, product page heroes — all pages)
+- [ ] Decide whether to restore product tiles (`.hero-apps-wrap`) or remove permanently
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
