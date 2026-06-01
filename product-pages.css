@@ -104,8 +104,8 @@
 /* ─── Page Hero ─────────────────────────── */
 .page-hero {
   width: 100%;
-  padding-top: 73px;
-  min-height: 620px;
+  padding-top: 80px;
+  min-height: 100vh;
   background: var(--grad-hero);
   display: flex;
   flex-direction: column;
@@ -116,11 +116,11 @@
 
 /* ─── Container wrapper inside hero ─────── */
 .page-hero-row {
-  max-width: 1504px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 56px 16px 0;
+  padding: 100px 48px 80px;
   width: 100%;
-  min-height: 500px;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1113,8 +1113,9 @@
   .page-hero-row {
     flex-direction: column;
     text-align: center;
-    padding: 40px 16px 48px;
+    padding: 60px 24px 48px;
     gap: 32px;
+    min-height: unset;
   }
   .page-hero-inner {
     max-width: 100%;
