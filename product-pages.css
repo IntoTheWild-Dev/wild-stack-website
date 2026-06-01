@@ -1155,6 +1155,17 @@
   border-radius: 16px;
 }
 
+.video-demo-placeholder:has(img) {
+  border: none;
+}
+
+.video-demo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .video-demo-label {
   font-size: 54px;
   font-weight: 700;
