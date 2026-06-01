@@ -67,9 +67,9 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Layout --- */
 .container {
-  max-width: 1504px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 48px;
 }
 
 /* --- Typography --- */
@@ -397,7 +397,7 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Sections --- */
 .section {
-  padding: 80px 0;
+  padding: 120px 0;
   background: #121414;
 }
 .section-alt {
@@ -406,7 +406,7 @@ a { text-decoration: none; color: inherit; }
 
 .section-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 .section-title {
   font-size: 48px;
@@ -721,7 +721,7 @@ a { text-decoration: none; color: inherit; }
 
 /* --- CTA Section --- */
 .cta-section {
-  padding: 80px 384px;
+  padding: 120px 48px;
   background: #121414;
   text-align: center;
 }
@@ -731,6 +731,8 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .cta-title {
@@ -863,7 +865,6 @@ a { text-decoration: none; color: inherit; }
 /* --- Responsive --- */
 @media (max-width: 1200px) {
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-  .cta-section { padding: 80px 120px; }
 }
 
 @media (max-width: 900px) {
@@ -875,6 +876,7 @@ a { text-decoration: none; color: inherit; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
   .cta-section { padding: 80px 24px; }
+  .container { padding: 0 24px; }
 }
 
 @media (max-width: 600px) {
