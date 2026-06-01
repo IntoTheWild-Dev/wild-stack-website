@@ -101,6 +101,22 @@
 - [x] Cart page layout: `.cart-section-heading` moved above `.cart-layout` so first item card top-aligns with Order Summary box
 - [x] Coral borders removed from every card/box site-wide (`styles.css` + `product-pages.css`): `border-color` reverts to `var(--border)` (subtle grey `rgba(73,101,122,0.28)`) — decorative accent lines on `.challenge-block` and `.solution-block` preserved
 
+### Session 6 — Hero redesign (2026-06-01)
+- [x] Header height increased: 73px → 80px
+- [x] Nav horizontal padding: 16px → 48px per side
+- [x] Nav link gap: 32px → 40px; link colour changed to `var(--text-muted)` (less active feel)
+- [x] Active nav underline (yellow `::after`) removed — all links uniform
+- [x] Nav `.btn-primary` resized: 15px font, 42px height, 9px radius
+- [x] Header `border-bottom` made more subtle: `rgba(255,255,255,0.06)`
+- [x] Hero layout converted from centred single-column → **two-column split**:
+  - Left: headline + tagline + CTAs (left-aligned, max-width 540px)
+  - Right: `.hero-visual` placeholder div (460×460px, dashed border) — **awaiting image/video**
+- [x] Hero content padding: 100px top / 80px bottom (breathing room from nav)
+- [x] Hero product tiles (`.hero-apps-wrap`) **hidden** — `display: none` for now
+- [x] Hero value bar (`Save time…`) pulled up, padding normalised (110px → 60px top)
+
 ## Pending
+- [ ] Drop image or video into `.hero-visual` right column (HTML: `<div class="hero-visual">`)
+- [ ] Decide whether to restore product tiles or leave them hidden permanently
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
