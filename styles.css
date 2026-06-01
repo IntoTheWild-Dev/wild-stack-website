@@ -225,6 +225,8 @@ a { text-decoration: none; color: inherit; }
 .nav-item {
   position: relative;
   list-style: none;
+  padding-bottom: 16px;
+  margin-bottom: -16px;
 }
 
 .nav-link--has-dropdown {

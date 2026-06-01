@@ -26,19 +26,15 @@
           <a href="marketplace.html" class="nav-link nav-link--has-dropdown">Solutions <svg class="dropdown-chevron" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="nav-dropdown">
             <a href="figma-plugins.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-icon"><img src="Wild%2CStack%20logo/figma.png" alt="" /></div>
               <div class="nav-dropdown-text"><strong>Figma Plug-ins</strong><span>Supercharge your Figma workflow</span></div>
             </a>
             <a href="adobe-scripts.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-icon"><img src="Wild%2CStack%20logo/indesign.png" alt="" /></div>
               <div class="nav-dropdown-text"><strong>Adobe Plugins</strong><span>InDesign &amp; Photoshop automation</span></div>
             </a>
             <a href="motion-graphics.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-icon"><img src="Wild%2CStack%20logo/aftereffect.png" alt="" /></div>
               <div class="nav-dropdown-text"><strong>Motion Graphics</strong><span>Template-driven animation</span></div>
             </a>
             <a href="cmyk.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-icon"><img src="Wild%2CStack%20logo/cmyk.png" alt="" /></div>
               <div class="nav-dropdown-text"><strong>Wild CMYK</strong><span>Print production tools</span></div>
             </a>
           </div>
@@ -56,34 +52,45 @@
   <main>
 
     <!-- PAGE HERO -->
-    <section class="page-hero page-hero--compact page-hero--white-title">
-      <div class="page-hero-inner">
-        <nav class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          Marketplace
-        </nav>
-        <h1>Tools Marketplace</h1>
-        <p class="page-subtitle"><strong class="text-coral">Cut production time by 80%!</strong><br />Ready-to-deploy creative design automation solutions for<br />every agency function</p>
+    <section class="page-hero page-hero--white-title">
+      <div class="page-hero-row">
+        <div class="page-hero-inner">
+          <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            Marketplace
+          </nav>
+          <h1>Tools Marketplace</h1>
+          <p class="page-subtitle"><strong class="text-coral">Cut production time by 80%.</strong> Ready-to-deploy creative design automation solutions for every agency function.</p>
+          <div class="page-hero-ctas">
+            <a href="#solutions" class="btn btn-white btn-large">Browse Solutions →</a>
+            <a href="index.html#contact" class="btn btn-outline-white btn-large">Book Consultation</a>
+          </div>
+        </div>
+        <div class="video-demo-wrap">
+          <div class="video-demo-placeholder"><!-- Image or video goes here --></div>
+        </div>
       </div>
     </section>
 
-    <!-- PRODUCT CARDS -->
-    <section class="section marketplace-page-section">
+    <!-- SOLUTIONS LIST -->
+    <section class="section marketplace-page-section" id="solutions">
       <div class="container">
 
-        <!-- FIGMA PLUG-INS CATEGORY -->
+        <!-- FIGMA PLUG-INS -->
         <div class="mkt-category">
           <div class="mkt-category-label">Figma Plug-ins</div>
-          <div class="marketplace-grid marketplace-grid--2col">
+          <div class="solution-list">
 
-            <div class="card product-card">
-              <div class="product-image-wrap">
-                <img src="Wild,Stack%20logo/figma.png" alt="Figma" class="product-image product-image-logo" />
-                <div class="product-image-overlay"></div>
+            <div class="solution-row">
+              <div class="solution-row-left">
+                <div class="solution-icon">
+                  <img src="Wild%2CStack%20logo/home_logo_super_localize.png" alt="Super Localize" />
+                </div>
+                <h3 class="solution-name"><a href="figma-plugins.html">Super Localize</a></h3>
+                <p class="solution-type">Figma Plug-in</p>
               </div>
-              <div class="product-content">
-                <h3 class="product-title"><a href="figma-plugins.html">Super Localize</a></h3>
+              <div class="solution-row-right">
                 <p class="card-desc">The fastest way to update and localize creative assets across Figma. Automate multi-country campaigns in one click.</p>
                 <ul class="feature-list">
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Quick text mapping across all frames</span></li>
@@ -91,20 +98,22 @@
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>CSV sync for localisation</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Smart Scripter with custom scripts</span></li>
                 </ul>
-                <div class="product-price-row">
+                <div class="solution-footer">
                   <span class="product-price">TBC / mo</span>
-                  <a href="figma-plugins.html" class="btn btn-blue">Explore →</a>
+                  <a href="figma-plugins.html" class="btn btn-white btn-large">Explore →</a>
                 </div>
               </div>
             </div>
 
-            <div class="card product-card">
-              <div class="product-image-wrap">
-                <img src="Wild,Stack%20logo/figma.png" alt="Figma" class="product-image product-image-logo" />
-                <div class="product-image-overlay"></div>
+            <div class="solution-row">
+              <div class="solution-row-left">
+                <div class="solution-icon">
+                  <img src="Wild%2CStack%20logo/home_logo_cmyk_figma_plugin.png" alt="Wild CMYK" />
+                </div>
+                <h3 class="solution-name"><a href="cmyk.html">Wild CMYK</a></h3>
+                <p class="solution-type">Figma Plug-in</p>
               </div>
-              <div class="product-content">
-                <h3 class="product-title"><a href="cmyk.html">Wild CMYK</a></h3>
+              <div class="solution-row-right">
                 <p class="card-desc">Professional print production directly inside Figma. Set up pages, add bleed and crop marks, export press-ready PDFs.</p>
                 <ul class="feature-list">
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Page setup for standard print sizes</span></li>
@@ -112,9 +121,9 @@
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>DPI audit across all frames</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Press-ready PDF export</span></li>
                 </ul>
-                <div class="product-price-row">
+                <div class="solution-footer">
                   <span class="product-price">TBC / mo</span>
-                  <a href="cmyk.html" class="btn btn-blue">Explore →</a>
+                  <a href="cmyk.html" class="btn btn-white btn-large">Explore →</a>
                 </div>
               </div>
             </div>
@@ -122,18 +131,20 @@
           </div>
         </div>
 
-        <!-- MOTION GRAPHICS CATEGORY -->
+        <!-- ADOBE SOLUTIONS -->
         <div class="mkt-category">
           <div class="mkt-category-label">Adobe Solutions</div>
-          <div class="marketplace-grid marketplace-grid--2col">
+          <div class="solution-list">
 
-            <div class="card product-card">
-              <div class="product-image-wrap">
-                <img src="Wild,Stack%20logo/aftereffect.png" alt="Adobe After Effects" class="product-image product-image-logo" />
-                <div class="product-image-overlay"></div>
+            <div class="solution-row">
+              <div class="solution-row-left">
+                <div class="solution-icon">
+                  <img src="Wild%2CStack%20logo/home_logo_after_effect.png" alt="AE CompSwap" />
+                </div>
+                <h3 class="solution-name"><a href="motion-graphics.html">AE CompSwap</a></h3>
+                <p class="solution-type">After Effects Script</p>
               </div>
-              <div class="product-content">
-                <h3 class="product-title"><a href="motion-graphics.html">AE CompSwap</a></h3>
+              <div class="solution-row-right">
                 <p class="card-desc">Batch-produce motion ad variants without rebuilding templates each time. Template-driven automation for After Effects.</p>
                 <ul class="feature-list">
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Swap content into motion templates instantly</span></li>
@@ -141,59 +152,64 @@
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Auto-export per platform spec</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Multi-market output from one source</span></li>
                 </ul>
-                <div class="product-price-row">
+                <div class="solution-footer">
                   <span class="product-price">TBC / mo</span>
-                  <a href="motion-graphics.html" class="btn btn-blue">Explore →</a>
+                  <a href="motion-graphics.html" class="btn btn-white btn-large">Explore →</a>
                 </div>
               </div>
             </div>
-            <div class="card product-card">
-              <div class="product-image-wrap product-image-wrap--dual">
-                <img src="Wild,Stack%20logo/indesign.png" alt="Adobe InDesign" class="product-image product-image-logo product-image-logo--left" />
-                <img src="Wild,Stack%20logo/photoshop.png" alt="Adobe Photoshop" class="product-image product-image-logo product-image-logo--right" />
-                <div class="product-image-overlay"></div>
+
+            <div class="solution-row">
+              <div class="solution-row-left">
+                <div class="solution-icon solution-icon--dual">
+                  <img src="Wild,Stack%20logo/indesign.png" alt="InDesign" />
+                  <img src="Wild,Stack%20logo/photoshop.png" alt="Photoshop" />
+                </div>
+                <h3 class="solution-name"><a href="adobe-scripts.html">Asset &amp; Copy Updater</a></h3>
+                <p class="solution-type">InDesign + Photoshop</p>
               </div>
-              <div class="product-content">
-                <h3 class="product-title"><a href="adobe-scripts.html">InDesign/Photoshop Asset &amp; Copy Updater</a></h3>
-                <p class="card-desc">Hours of repetitive production work, done in seconds. Automate text and image updates across entire InDesign projects in one interface.</p>
+              <div class="solution-row-right">
+                <p class="card-desc">Hours of repetitive production work, done in seconds. Automate text and image updates across entire InDesign and Photoshop projects.</p>
                 <ul class="feature-list">
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Batch text replacement across the project</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Image swap queue — execute all at once</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Size preservation on all replacements</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Multi-frame support across the document</span></li>
                 </ul>
-                <div class="product-price-row">
+                <div class="solution-footer">
                   <span class="product-price">TBC / mo</span>
-                  <a href="adobe-scripts.html" class="btn btn-blue">Explore →</a>
+                  <a href="adobe-scripts.html" class="btn btn-white btn-large">Explore →</a>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
-
-        <!-- CUSTOM AUTOMATIONS — COMING SOON -->
+        <!-- CUSTOM AUTOMATIONS -->
         <div class="mkt-category">
           <div class="mkt-category-label">Custom Automations</div>
-          <div class="marketplace-grid marketplace-grid--1col">
+          <div class="solution-list">
 
-            <div class="card product-card product-card--coming-soon">
-              <div class="product-image-wrap product-image-wrap--coming-soon">
-                <span class="product-image-placeholder">✦</span>
-                <div class="product-image-overlay"></div>
+            <div class="solution-row solution-row--coming-soon">
+              <div class="solution-row-left">
+                <div class="solution-icon solution-icon--placeholder">
+                  <span>✦</span>
+                </div>
+                <h3 class="solution-name"><a href="custom-automations.html">Bespoke Solutions</a></h3>
+                <p class="solution-type">Custom Build</p>
               </div>
-              <div class="product-content">
-                <div class="coming-soon-pill">Coming Soon</div>
-                <h3 class="product-title"><a href="custom-automations.html">Bespoke Automation Solutions</a></h3>
+              <div class="solution-row-right">
+                <div class="coming-soon-pill" style="margin-bottom: 16px;">Coming Soon</div>
                 <p class="card-desc">Custom tools built around your exact creative workflow. Photoshop–Figma bridge, Photoshop Auto-Update Action, Motion for Figma — and more in development.</p>
                 <ul class="feature-list">
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Photoshop - Figma importer</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Smart Image Resize</span></li>
                   <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Motion for Figma</span></li>
                 </ul>
-                <div class="product-price-row">
+                <div class="solution-footer">
                   <span class="product-price">Join Waitlist</span>
-                  <a href="custom-automations.html" class="btn btn-outline-dark">Learn More →</a>
+                  <a href="custom-automations.html" class="btn btn-outline-white btn-large">Learn More →</a>
                 </div>
               </div>
             </div>
@@ -206,13 +222,16 @@
 
     <!-- CTA SECTION -->
     <section class="cta-section" id="contact">
-      <div class="cta-content">
-        <h2 class="cta-title"><span class="text-white">Stop</span> pixel-pushing.<br /><span class="text-white">Start</span> automating.</h2>
-        <p class="cta-subtitle">Book a free consultation and discover how partnering with us can transform your operations</p>
-        <div class="cta-buttons">
-          <a href="mailto:hello@wildstack.studio" class="btn btn-white btn-large">Book Free Consultation</a>
-          <a href="marketplace.html" class="btn btn-outline-white btn-large">Browse Solutions</a>
+      <div class="cta-inner">
+        <div class="cta-content">
+          <h2 class="cta-title"><span class="text-white">Stop</span> pixel-pushing.<br /><span class="text-white">Start</span> automating.</h2>
+          <p class="cta-subtitle">Book a free consultation and discover how partnering with us can transform your operations</p>
+          <div class="cta-buttons">
+            <a href="mailto:hello@wildstack.studio" class="btn btn-white btn-large">Book Free Consultation</a>
+            <a href="marketplace.html" class="btn btn-outline-white btn-large">Browse Solutions</a>
+          </div>
         </div>
+        <div class="cta-visual"><!-- Image or video goes here --></div>
       </div>
     </section>
 
