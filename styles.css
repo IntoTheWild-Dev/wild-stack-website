@@ -246,28 +246,40 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 16px;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 896px;
+  max-width: 540px;
   width: 100%;
-  padding: 48px 16px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-visual {
+  flex: 0 0 460px;
+  height: 460px;
+  border-radius: 16px;
+  border: 1px dashed rgba(73, 101, 122, 0.35);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .hero-value-bar {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-height: 200px;
-  padding: 110px 24px 60px;
+  padding: 60px 24px 60px;
   background: #121414;
   display: flex;
   align-items: center;
@@ -296,10 +308,9 @@ a { text-decoration: none; color: inherit; }
   font-size: 58px;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: 0.12px;
   margin-bottom: 24px;
-  max-width: 872px;
 }
 
 .text-coral {
@@ -323,8 +334,8 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   gap: 20px;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
 .hero-apps-wrap {
@@ -333,8 +344,10 @@ a { text-decoration: none; color: inherit; }
   background: transparent;
   border: none;
   border-radius: 0;
-  padding: 0;
-  margin: 0 auto -70px;
+  padding: 0 48px;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
   position: relative;
   z-index: 3;
 }
