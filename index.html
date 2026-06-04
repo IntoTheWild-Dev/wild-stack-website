@@ -52,12 +52,12 @@
           </div>
         </li>
         <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
-        <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#pricing-enquiry" class="nav-link">Pricing & Plans</a></li>
         <li><a href="index.html#about" class="nav-link">About</a></li>
         <li><a href="index.html#contact" class="nav-link">Contact</a></li>
         <li><a href="cart.html" class="nav-link">Cart</a></li>
       </ul>
-      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="#pricing-enquiry" class="btn btn-primary">Get Started</a>
     </nav>
   </header>
 
@@ -259,10 +259,39 @@
       </div>
     </section>
 
+    <!-- PRICING ENQUIRY -->
+    <section class="section section-alt" id="pricing-enquiry">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Pricing & Plans</h2>
+          <p class="section-subtitle">Every agency is different. Tell us what you need and we'll get back to you with a tailored quote.</p>
+        </div>
+        <div class="pricing-enquiry-wrap">
+          <div class="card pricing-enquiry-card">
+            <form action="https://formspree.io/f/mgobepnp" method="POST">
+              <div class="form-field">
+                <label class="form-label" for="enquiry-name">NAME</label>
+                <input class="form-input" type="text" id="enquiry-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="enquiry-email">EMAIL</label>
+                <input class="form-input" type="email" id="enquiry-email" name="email" placeholder="you@youragency.com" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="enquiry-message">WHAT ARE YOU LOOKING FOR?</label>
+                <textarea class="form-input form-textarea" id="enquiry-message" name="message" placeholder="Tell us about your project or the tools you're interested in..." rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-large">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer" id="pricing">
+  <footer class="footer">
     <div class="footer-inner container">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -276,7 +305,7 @@
           <ul class="footer-links">
             <li><a href="#">Home</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#pricing-enquiry">Pricing & Plans</a></li>
             <li><a href="#about">About</a></li>
           </ul>
         </div>
@@ -292,10 +321,10 @@
         <div class="footer-col">
           <h4 class="footer-heading">Don't get left behind.</h4>
           <p class="footer-newsletter-desc">Get the latest automation tools and workflow hacks delivered straight to your inbox.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Your email" class="newsletter-input" />
-            <button class="btn btn-primary">Join the Wild Side</button>
-          </div>
+          <form class="newsletter-form" action="https://formspree.io/f/mlgkeopb" method="POST">
+            <input type="email" name="email" placeholder="Your email" class="newsletter-input" required />
+            <button type="submit" class="btn btn-primary">Join the Wild Side</button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
