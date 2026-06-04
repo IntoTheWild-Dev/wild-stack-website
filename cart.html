@@ -278,8 +278,12 @@
           btn.addEventListener('click', function () {
             var input = row.querySelector('.cart-qty-input');
             var q = parseQty(input);
-            if (btn.getAttribute('data-action') === 'inc') q = Math.min(99, q + 1);
-            else q = Math.max(1, q - 1);
+            if (btn.getAttribute('data-action') === 'inc') {
+              q = Math.min(99, q + 1);
+            } else {
+              q = q - 1;
+              if (q < 1) { row.remove(); recalc(); return; }
+            }
             input.value = String(q);
             recalc();
           });

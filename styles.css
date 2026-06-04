@@ -399,7 +399,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 60px 24px 60px;
+  padding: 60px 48px;
   background: #121414;
   display: flex;
   align-items: center;
