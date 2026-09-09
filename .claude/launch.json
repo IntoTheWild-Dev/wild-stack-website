@@ -4,7 +4,7 @@
     {
       "name": "wildstack",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8743"],
+      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "/Users/juliatstadlertheunissen/Documents/Creative_Devs /Wild Stack Website"],
       "port": 8743
     }
   ]

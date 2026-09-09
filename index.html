@@ -17,10 +17,9 @@
   <meta name="twitter:title" content="Wild Stack — Automate Your Agency with Creative Workflows">
   <meta name="twitter:description" content="Save time, reduce cost and scale your creative production with ready-to-deploy design automation solutions for Figma, InDesign and After Effects.">
   <meta name="twitter:image" content="https://wildstack.studio/social-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles-home.css" />
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
 <body>
@@ -34,28 +33,9 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="marketplace.html" class="nav-link nav-link--has-dropdown">Solutions <svg class="dropdown-chevron" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="nav-dropdown">
-            <a href="figma-plugins.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-text"><strong>Wild Super Localize</strong><span>Automate Figma localisation at scale</span></div>
-            </a>
-            <a href="cmyk.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-text"><strong>Wild CMYK</strong><span>Print production tools</span></div>
-            </a>
-            <a href="motion-graphics.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-text"><strong>Motion Graphics</strong><span>Template-driven animation</span></div>
-            </a>
-            <a href="adobe-scripts.html" class="nav-dropdown-item">
-              <div class="nav-dropdown-text"><strong>Adobe Plugins</strong><span>Adobe suite automation</span></div>
-            </a>
-          </div>
-        </li>
-        <li><a href="marketplace.html" class="nav-link">Marketplace</a></li>
         <li><a href="#pricing-enquiry" class="nav-link">Pricing & Plans</a></li>
         <li><a href="index.html#about" class="nav-link">About</a></li>
         <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-        <li><a href="cart.html" class="nav-link">Cart</a></li>
       </ul>
       <a href="#pricing-enquiry" class="btn btn-primary">Get Started</a>
     </nav>
@@ -72,7 +52,6 @@
           <p class="hero-tagline">The ultimate suite of precision tools for Creative power users. Streamline repetition and focus on what matters most: the creative vision.</p>
           <div class="hero-ctas">
             <a href="mailto:hello@wildstack.studio" class="btn btn-white btn-large">Book Consultation</a>
-            <a href="marketplace.html" class="btn btn-outline-white btn-large">Browse Solutions</a>
           </div>
         </div>
         <div class="hero-visual">
@@ -107,8 +86,8 @@
     <section class="section" id="marketplace">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Tools Marketplace</h2>
-          <p class="section-subtitle"><strong class="subtitle-accent">Cut production time by 80%</strong>Ready-to-deploy creative design automation solutions for<br>every agency function.</p>
+          <h2 class="section-title">Custom Automations, Built Around You</h2>
+          <p class="section-subtitle"><strong class="subtitle-accent">Not off-the-shelf. Built for how you actually work.</strong>We design and build bespoke creative automation, shaped entirely around your team's workflow and tools.</p>
         </div>
         <div class="marketplace-grid">
 
@@ -118,15 +97,15 @@
               <div class="product-image-overlay"></div>
             </div>
             <div class="product-content">
-              <h3 class="product-title"><a href="figma-plugins.html">Figma Super Charged Plug-ins</a></h3>
-              <p class="card-desc">Stop doing by hand what your tools should do for you. Supercharge Figma with automations that kill the busywork.</p>
+              <h3 class="product-title">Design File Automation</h3>
+              <p class="card-desc">We automate the repetitive parts of your design process — from file organisation to asset delivery — so your team can focus on the work that matters.</p>
               <ul class="feature-list">
                 <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Auto-name &amp; organise layers and components</span></li>
                 <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Batch export assets in any format</span></li>
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Sync design tokens across files instantly</span></li>
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>CSV sync for localization</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Sync content across files instantly</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Localisation &amp; translation workflows</span></li>
               </ul>
-              <a href="figma-plugins.html" class="btn btn-white btn-large">Buy Now</a>
+              <a href="#pricing-enquiry" class="btn btn-white btn-large">Get in Touch</a>
             </div>
           </div>
 
@@ -137,14 +116,14 @@
               <div class="product-image-overlay"></div>
             </div>
             <div class="product-content">
-              <h3 class="product-title"><a href="adobe-scripts.html">Adobe Plugins for PS/ID</a></h3>
-              <p class="card-desc">Hours of repetitive production work, done in seconds. Custom plugins that handle the heavy lifting across the Adobe suite.</p>
+              <h3 class="product-title">Production &amp; Layout Automation</h3>
+              <p class="card-desc">Hours of manual production work, turned into a one-click process — built around your exact templates and brand guidelines.</p>
               <ul class="feature-list">
                 <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Batch resize &amp; export across formats</span></li>
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Auto-populate layouts from data</span></li>
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>One-click brand consistency checks</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Auto-populate layouts from your data</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Built-in brand consistency checks</span></li>
               </ul>
-              <a href="adobe-scripts.html" class="btn btn-white btn-large">Buy Now</a>
+              <a href="#pricing-enquiry" class="btn btn-white btn-large">Get in Touch</a>
             </div>
           </div>
 
@@ -154,22 +133,17 @@
               <div class="product-image-overlay"></div>
             </div>
             <div class="product-content">
-              <h3 class="product-title"><a href="motion-graphics.html">Motion Graphics Automation</a></h3>
-              <p class="card-desc">Produce more motion, faster. Template-driven automation so your team stops rebuilding from scratch every time.</p>
+              <h3 class="product-title">Motion &amp; Content Generation</h3>
+              <p class="card-desc">Generate on-brand motion and creative content at scale, without rebuilding from scratch for every campaign or client.</p>
               <ul class="feature-list">
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Swap content into motion templates instantly</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Template-driven content generation</span></li>
                 <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Batch render multiple variations at once</span></li>
-                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Auto-export per platform spec</span></li>
+                <li><img src="Wild,Stack%20logo/checklist.png" alt="✓" class="check-icon" /><span>Built around your existing brand assets</span></li>
               </ul>
-              <a href="motion-graphics.html" class="btn btn-white btn-large">Buy Now</a>
+              <a href="#pricing-enquiry" class="btn btn-white btn-large">Get in Touch</a>
             </div>
           </div>
 
-        </div>
-        <div class="marketplace-footer">
-          <a href="marketplace.html" class="btn btn-outline-white btn-large">
-            View All Automations →
-          </a>
         </div>
       </div>
     </section>
@@ -185,20 +159,20 @@
           <div class="card step-card">
             <span class="step-number-bg">01</span>
             <div class="step-badge">01</div>
-            <h3 class="step-title">Choose your Tool</h3>
-            <p class="card-desc">Browse our marketplace of pre-built tool automation solutions designed for your creative agency needs</p>
+            <h3 class="step-title">Reach Out</h3>
+            <p class="card-desc">Tell us about your workflow and the repetitive tasks slowing your team down</p>
           </div>
           <div class="card step-card">
             <span class="step-number-bg">02</span>
             <div class="step-badge">02</div>
-            <h3 class="step-title">Purchase or Customize</h3>
-            <p class="card-desc">Select a ready-made solution or request custom modifications to fit your specific requirements</p>
+            <h3 class="step-title">We Solve It Together</h3>
+            <p class="card-desc">We dig into your process and map out the right automation for your specific needs</p>
           </div>
           <div class="card step-card">
             <span class="step-number-bg">03</span>
             <div class="step-badge">03</div>
-            <h3 class="step-title">Deploy &amp; Scale</h3>
-            <p class="card-desc">Integrate the automation into your agency and watch productivity soar while costs decrease</p>
+            <h3 class="step-title">We Build Your Solution</h3>
+            <p class="card-desc">Get a custom-built tool designed around exactly how your team works, deployed and ready to go</p>
           </div>
         </div>
       </div>
@@ -208,7 +182,7 @@
     <section class="section section-alt" id="about">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title why-choose-title">Why Choose <span class="why-choose-logo-wrap"><img src="Wild%2CStack%20logo/Logo%20(Only%20Font)%20PNG%204.png" alt="Wild Stack" class="why-choose-logo" /></span></h2>
+          <h2 class="section-title why-choose-title">Why Choose <span class="why-choose-logo-wrap"><img src="Wild%2CStack%20logo/Logo%20(Only%20Font)%20PNG%201.png" alt="Wild Stack" class="why-choose-logo" /></span></h2>
           <p class="section-subtitle">Transform your business with intelligent automation</p>
         </div>
         <div class="benefits-grid">
@@ -252,7 +226,6 @@
           <p class="cta-subtitle">Book a free consultation and discover how partnering with us can transform your operations</p>
           <div class="cta-buttons">
             <a href="mailto:hello@wildstack.studio" class="btn btn-white btn-large">Book Free Consultation</a>
-            <a href="marketplace.html" class="btn btn-outline-white btn-large">Browse Solutions</a>
           </div>
         </div>
         <div class="cta-visual"><img src="Website%20Hero%20Images/CTA%20Image.png" alt="Wild Stack" /></div>
@@ -299,24 +272,6 @@
             <img src="Wild%2CStack%20logo/Logo%20(Only%20Font)%20PNG%204.png" alt="Wild Stack" class="footer-logo-img" />
           </div>
           <p class="footer-tagline">Automation Solutions for<br>Modern Businesses</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="#pricing-enquiry">Pricing & Plans</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Products</h4>
-          <ul class="footer-links">
-            <li><a href="figma-plugins.html">Super Localize</a></li>
-            <li><a href="cmyk.html">Wild CMYK</a></li>
-            <li><a href="adobe-scripts.html">Adobe Plugins</a></li>
-            <li><a href="motion-graphics.html">Wild Motion</a></li>
-          </ul>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Don't get left behind.</h4>
