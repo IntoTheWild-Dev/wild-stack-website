@@ -33,6 +33,10 @@
 ```
 
 ## Colour System
+**As of 2026-09-09 there are two stylesheets in play — see Session 8 below.**
+`styles.css` (dark theme, table below) still styles every page except the
+homepage. `styles-home.css` (light theme) styles `index.html` only.
+
 | Token | Value | Used for |
 |-------|-------|----------|
 | `--orange` / `--accent` | `#DF6F6D` | Coral accent (text/icons only — card borders removed) |
@@ -40,6 +44,15 @@
 | `--grad-hero` | `#121414` | All hero section backgrounds |
 | `--grad-cta` | `#121414` | All CTA section backgrounds |
 | Section dividers | _(removed)_ | Coral section borders removed from all pages |
+
+### Homepage-only tokens (`styles-home.css`) — matches Wild Scale / Wild Cast / Wild Proof / Wild Loop / Wild Dashboard HQ
+| Token | Value | Used for |
+|-------|-------|----------|
+| `--orange` | `#DF6F6D` | Coral primary — same value as the dark theme |
+| `--bg-main` / `.section` | `#FAFAFA` | Page + section background |
+| `--bg-alt` / `.section-alt` | `#FFFFFF` | Alternating section background |
+| `--bg-footer` | `#0f172b` | Header + footer navy bookend bands |
+| Font | `Satoshi` (Fontshare) | Replaces Inter on the homepage only |
 
 ## Completed — 2026-05-25
 ### Deployment & Infrastructure
@@ -134,8 +147,28 @@
 - [x] Adobe plugins page: all "InDesign" references → "Adobe" in titles/headings/CTAs
 - [x] `ADOBE NEW Icon.png` copied to `Wild,Stack logo/`
 
+### Session 8 — Homepage CI refresh & positioning pivot (2026-09-09)
+- [x] New shared Wild CI adopted on the homepage: light surfaces (`#FAFAFA`/`#FFFFFF`), coral primary (`#DF6F6D`), Satoshi font via Fontshare — same token set as Wild Scale / Wild Cast / Wild Proof / Wild Loop / Wild Dashboard HQ
+- [x] New `styles-home.css` created (forked from `styles.css`) so **only `index.html`** uses the new CI — cart, checkout, marketplace, and all product pages are untouched and still run the old dark theme
+- [x] Header + footer kept as dark navy (`#0f172b`) bookend bands, matching the other Wild tools' `bg-brand-dark` pattern; everything else on the homepage is light
+- [x] Nav: Solutions dropdown, Marketplace, and Cart links removed (those pages are left live, just unlinked from nav) — site pivoting away from self-serve marketplace positioning toward bespoke custom builds
+- [x] Hero: "Browse Solutions" button removed, "Book Consultation" kept
+- [x] "Tools Marketplace" section renamed "Custom Automations, Built Around You"; copy rewritten around bespoke-build positioning instead of named self-serve products
+- [x] Marketplace content iterated 3x: named product cards → 4 unbranded capability cards (proof-of-work, doesn't name Scale/Cast/Proof/Track) → collapsed into a single horizontal icon+label strip (no descriptions) since 4 cards felt heavy
+- [x] "View All Automations" button removed
+- [x] "How It Works" steps rewritten: Reach Out → We Solve It Together → We Build Your Solution (headline/subline unchanged)
+- [x] "Why Choose" section redesigned: 4-card grid → horizontal icon+label flow connected by coral arrows (Save Time → Reduce Costs → Increase Productivity → Scale Operations)
+- [x] CTA banner: "Browse Solutions" button removed, "Book Free Consultation" kept
+- [x] Footer: Quick Links and Products columns removed — only brand (logo+tagline) and the newsletter CTA remain
+- [x] Fixed a stray divider line above the hero value-prop box
+- [x] Recovered logo assets (`Icon-Figma community.png`, `Logo_Orange_Upscaled.jpg`, a Logo Animations AE project) from the old duplicate `Wild Stack Studio Website` folder before deleting it; moved the heavy raw files to a sibling `Wild Stack Assets` folder rather than committing them to this repo
+- [x] `.claude/launch.json` fixed to point the local preview server at this project's directory
+
 ## Pending
-- [ ] Drop image or video into right-column placeholders (hero, CTA, product page heroes — all pages)
+- [ ] Apply the new CI to the rest of the site (cart, checkout, marketplace, product pages) once the homepage direction is fully signed off
+- [ ] Decide long-term fate of Marketplace/Cart/product pages — currently unlinked from nav but still live at their URLs
+- [ ] Replace the abstract cube renders (hero + CTA visuals) with something new — sourcing in progress
+- [ ] Drop image or video into right-column placeholders on product page heroes (not the homepage — that already has hero/CTA images)
 - [ ] Decide whether to restore product tiles (`.hero-apps-wrap`) or remove permanently
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
 - [ ] Review `figma-plugins-new.html` — references missing `styles-new.css`, not linked anywhere
