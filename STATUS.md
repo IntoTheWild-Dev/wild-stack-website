@@ -164,10 +164,18 @@ homepage. `styles-home.css` (light theme) styles `index.html` only.
 - [x] Recovered logo assets (`Icon-Figma community.png`, `Logo_Orange_Upscaled.jpg`, a Logo Animations AE project) from the old duplicate `Wild Stack Studio Website` folder before deleting it; moved the heavy raw files to a sibling `Wild Stack Assets` folder rather than committing them to this repo
 - [x] `.claude/launch.json` fixed to point the local preview server at this project's directory
 
+### Session 9 — Hero/CTA visual iteration, IconScout added (2026-09-10)
+- [x] IconScout MCP connected — available for sourcing icons/illustrations in future sessions
+- [x] New higher-res block graphic (`tri-block-structure.png`) tried in the hero slot, replacing the old `Homepage Hero.png`; downsized 3000px/6.7MB → 1000px/342KB and moved into `Website Hero Images/`
+- [x] Iterated the hero graphic's shadow treatment several rounds: solid navy backdrop panel → soft ambient blur → hard directional (light-from-right) → grounded contact shadow — none landed
+- [x] Both `.hero-visual` (hero) and `.cta-visual` (CTA banner) **hidden** (`display: none`) for now, at the base rule (not just on mobile) — revisit with a new visual direction next session
+- [x] `.hero-visual` mobile overflow bug fixed in passing: it had no responsive rule and spilled off-screen below 900px (now moot while hidden, but the rule stays for whenever it's un-hidden)
+- [x] `.claude/launch.json` preview server fixed again — `--directory` flag crashed under this sandbox's cwd restrictions; switched to `bash -c 'cd ... && exec python3 -m http.server'`
+
 ## Pending
 - [ ] Apply the new CI to the rest of the site (cart, checkout, marketplace, product pages) once the homepage direction is fully signed off
 - [ ] Decide long-term fate of Marketplace/Cart/product pages — currently unlinked from nav but still live at their URLs
-- [ ] Replace the abstract cube renders (hero + CTA visuals) with something new — sourcing in progress
+- [ ] Decide on a real replacement for the hero + CTA visuals — cube-render approach shelved after shadow iteration didn't land; both slots hidden. Consider sourcing icons via the new IconScout MCP instead of another illustrative render
 - [ ] Drop image or video into right-column placeholders on product page heroes (not the homepage — that already has hero/CTA images)
 - [ ] Decide whether to restore product tiles (`.hero-apps-wrap`) or remove permanently
 - [ ] Delete old `landing-page` branch on GitHub (cleanup, not urgent)
