@@ -394,6 +394,7 @@ a { text-decoration: none; color: inherit; }
 
 .hero-visual:has(img) {
   border: none;
+  overflow: visible;
 }
 
 .hero-visual img {
@@ -401,6 +402,7 @@ a { text-decoration: none; color: inherit; }
   height: 100%;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 25px 45px rgba(15, 23, 43, 0.35)) drop-shadow(0 8px 16px rgba(15, 23, 43, 0.2));
 }
 
 .hero-value-bar {
@@ -1146,6 +1148,7 @@ a { text-decoration: none; color: inherit; }
   .container { padding: 0 24px; }
   .cta-inner { flex-direction: column; }
   .cta-visual { display: none; }
+  .hero-visual { display: none; }
   .hero-inner { min-height: unset; }
 }
 

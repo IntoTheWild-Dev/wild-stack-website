@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "wildstack",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "/Users/juliatstadlertheunissen/Documents/Creative_Devs /Wild Stack Website"],
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd '/Users/juliatstadlertheunissen/Documents/Creative_Devs /Wild Stack Website' && exec python3 -m http.server 8743"],
       "port": 8743
     }
   ]
