@@ -1,0 +1,11 @@
+# Dev-only files for the main site's match test. Not part of the website.
+/CLAUDE.md
+/README.md
+/package.json
+/package-lock.json
+/playwright.config.js
+/tests
+/reference
+/node_modules
+/test-results
+/playwright-report
