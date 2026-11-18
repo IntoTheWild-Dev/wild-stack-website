@@ -1,5 +1,5 @@
 // One screenshot per section, per project (desktop/mobile x light/dark).
-// Moving parts (bird flock, film, race bar) are masked, so only real design changes fail.
+// Moving parts are masked (bird flock, film, hero word) or hidden (race bar), so only real design changes fail.
 const { test: base, expect } = require('@playwright/test');
 
 // theme is a per-project option (see playwright.config.js). It must be declared with extend, not use,
@@ -7,7 +7,7 @@ const { test: base, expect } = require('@playwright/test');
 const test = base.extend({ theme: ['light', { option: true }] });
 
 const SECTIONS = [
-  ['01-hero', 'section.hero'], ['02-logos', '#customers'], ['03-who', '#who'],
+  ['01-hero', 'section.hero'], ['03-who', '#who'],
   ['04-how', '#how'], ['05-team', '#team'], ['06-print', '#print'],
   ['07-enterprise', '#enterprise'], ['08-compare', '#compare'], ['09-pricing', '#pricing'],
   ['10-proof', '#proof'], ['11-about', '#about'], ['12-faq', '#faq'],
@@ -19,9 +19,12 @@ test('page matches the approved design', async ({ page, theme }) => {
   await page.goto('/', { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(1500); // images switch to eager loading 200 ms after load
-  const masks = [page.locator('canvas'), page.locator('video'), page.locator('#race'), page.locator('.swap')];
+  const masks = [page.locator('canvas'), page.locator('video'), page.locator('.swap')];
   for (const [name, sel] of SECTIONS) {
-    if (name === '02-logos') await page.addStyleTag({ content: 'header.site,.chat-btn,.to-top{visibility:hidden!important}' });
+    if (name === '03-who') await page.addStyleTag({ content: 'header.site,.chat-btn,.to-top{visibility:hidden!important}' });
+    // The race bar animates. It is hidden rather than masked: it sits on a sub-pixel offset,
+    // so a mask's anti-aliased edge changed by a pixel from run to run.
+    if (name === '10-proof') await page.addStyleTag({ content: '#race{visibility:hidden!important}' });
     const el = page.locator(sel).first();
     await el.scrollIntoViewIfNeeded();
     await page.waitForTimeout(400);
