@@ -6,3 +6,8 @@
 *.log
 *.tmp
 Thumbs.db
+
+# Match test (Playwright)
+node_modules/
+test-results/
+playwright-report/
