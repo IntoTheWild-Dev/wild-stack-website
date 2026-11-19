@@ -489,8 +489,8 @@
   .fill.slow i{flex:1;display:grid;place-items:center;font-style:normal;font-size:16px;font-weight:700;color:var(--ash-2);border-right:2px solid var(--ground);white-space:nowrap;overflow:hidden}
   .fill.slow i:nth-child(2),.fill.slow i:nth-child(4){flex:1.6;background:repeating-linear-gradient(-45deg,transparent 0 10px,rgba(255,255,255,.04) 10px 20px)}
   .fill.slow i:last-child{border-right:0}
-  .fill.quick{width:100%;background:var(--coral);clip-path:inset(0 calc(100% - var(--q,.476)*100%) 0 0 round 100px)}
-  .race-done{position:absolute;left:calc(47.6% + 20px);top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:700;color:var(--fg);transition:opacity .3s}
+  .fill.quick{width:100%;background:var(--coral);clip-path:inset(0 calc(100% - var(--q,.0595)*100%) 0 0 round 100px)}
+  .race-done{position:absolute;left:calc(5.95% + 20px);top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:700;color:var(--fg);transition:opacity .3s}
   .lane-head .val{white-space:nowrap}
   .race-done .ic{font-size:24px;color:var(--coral);stroke-width:2.4}
   .race.hide-done .race-done{opacity:0}
@@ -761,7 +761,7 @@
     .val{font-size:30px}
     .who{font-size:18px}
     .bar{height:48px}
-    .race-done{left:calc(47.6% + 12px);font-size:15px;gap:6px}
+    .race-done{left:calc(5.95% + 12px);font-size:15px;gap:6px}
     .race-done .ic{font-size:18px}
     .fill.slow i{font-size:0}
     .axis{font-size:12px}
@@ -1219,7 +1219,7 @@
             <li><svg class="ic"><use href="#i-shield"/></svg>Roles and permissions for your whole team</li>
           </ul>
           <a class="btn btn-outline" href="#demo" data-cta><svg class="ic"><use href="#i-cal"/></svg>Request a call</a>
-          <p class="price-alt"><a href="mailto:mark@wildstack.studio">Or email us</a></p>
+          <p class="price-alt"><a href="mailto:hello@wildstack.studio">Or email us</a></p>
         </article>
       </div>
       <p class="price-foot">Prices in USD, excluding tax.</p>
@@ -1230,7 +1230,7 @@
   <section class="moment" id="proof" aria-label="Proof">
     <div class="inner">
       <p class="bigline">One flyer took 4.2 days.<br>Now it&rsquo;s ready in <em class="it">minutes.</em></p>
-      <div class="race" id="race" role="img" aria-label="Timeline: with an agency, one flyer takes 4.2 days of back-and-forth. With Wildstack, it is back in 48 hours, from one brief.">
+      <div class="race" id="race" role="img" aria-label="Timeline: with an agency, one flyer takes 4.2 days of back-and-forth. With Wildstack, it is ready in minutes, from one brief.">
         <div class="axis" aria-hidden="true"><span>Brief</span><span>Day 1</span><span>Day 2</span><span>Day 3</span><span>Day 4</span></div>
         <div class="lane">
           <div class="lane-head"><span class="who"><svg class="ic"><use href="#i-users"/></svg>With an agency</span><b class="val" id="slowval">4.2 days</b></div>
@@ -1239,7 +1239,7 @@
           </div></div>
         </div>
         <div class="lane fast">
-          <div class="lane-head"><span class="who"><svg class="ic"><use href="#i-zap"/></svg>With Wildstack</span><b class="val" id="fastval">48 hours</b></div>
+          <div class="lane-head"><span class="who"><svg class="ic"><use href="#i-zap"/></svg>With Wildstack</span><b class="val" id="fastval">Minutes</b></div>
           <div class="bar"><div class="fill quick" id="quickfill"></div><span class="race-done" id="done"><svg class="ic"><use href="#i-check"/></svg>One brief from you.</span></div>
         </div>
       </div>
@@ -1602,19 +1602,19 @@
   })();
   // Footer newsletter form: end
 
-  // Moment: race on one clock. Agency 4.2 days; Wildstack stops at 48 hours (2/4.2 of the bar), then 'One brief from you.' shows.
+  // Moment: race on one clock. Agency 4.2 days; Wildstack stops almost at once (a short mark, not to scale: it is minutes), then 'One brief from you.' shows.
   var race=document.getElementById('race'), slow=document.getElementById('slowfill'), quick=document.getElementById('quickfill');
   var slowval=document.getElementById('slowval'), fastval=document.getElementById('fastval');
   function setRace(p){
-    // p: 0..1 over a 7 s loop. Fast lane finishes in the first 0.35 s; slow lane runs 0.05→0.85.
+    // p: 0..1 over a 7 s loop. Fast lane ("Minutes", drawn as a short mark, not to scale) finishes early; slow lane runs 0.05→0.85.
     var sp=Math.max(0,Math.min(1,(p-0.05)/0.8));
     var se=sp<.5?2*sp*sp:1-Math.pow(-2*sp+2,2)/2;
-    var days=se*4.2, qd=Math.min(days,2);
+    var days=se*4.2, qd=Math.min(days,.25);
     quick.style.setProperty('--q',(qd/4.2).toFixed(4));
-    var qh=Math.max(1,Math.round(qd*24)); fastval.textContent=qh+(qh===1?' hour':' hours');
+    fastval.textContent='Minutes';
     slow.style.setProperty('--p',se.toFixed(4));
     var hrs=Math.max(1,Math.round(days*24)); slowval.textContent=(days<1? hrs+(hrs===1?' hour':' hours') : days.toFixed(1)+' days');
-    race.classList.toggle('hide-done', days<2);
+    race.classList.toggle('hide-done', days<.25);
   }
   if(reduce){ setRace(1); }
   else{
