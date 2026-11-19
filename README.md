@@ -71,11 +71,8 @@ Every push to `main` now deploys by itself. Other branches get their own preview
 
 | Task | Needs from Mark |
 |---|---|
-| **Newsletter → Loops.** The form stays on the page as it is now. Connect it to Loops when Mark sets up the Loops form. | The Loops custom-form URL |
-| **Chat.** It is design-only now. It shows "Live chat opens at launch". | A Crisp website ID, **or** "hide it" |
-| **Privacy and Terms pages.** The footer links go to the top of the page now. | The legal text |
-| **Social icons.** They are not links yet. | LinkedIn, X and Instagram URLs |
-| **Blog link.** It goes to the top of the page. | Hide it, or a blog plan |
+| **Newsletter → Google Sheet.** Built (`api/newsletter.js` and `scripts/newsletter-apps-script.gs`). Needs the Google side set up and two Vercel env vars. | `NEWSLETTER_SHEET_URL` and `NEWSLETTER_SECRET` |
+| **Privacy and Terms pages.** Built from the owner's draft text. | A lawyer's review before launch |
 | **Analytics.** There is none yet. The cookie panel is ready for one. | Which tool (or none) |
 | **AI training crawlers.** `robots.txt` allows all now. | Allow or block |
 
@@ -87,8 +84,6 @@ These are on the page now. They must be true on launch day:
 - **"Printed."** in the Step 3 headline. We deliver print-ready files. We do not print (copy review 5.1).
 - **"Brand check on every file"** and **"Your files stay yours"**. They must match how we work and the contract.
 - **CMYK files.** Do one printer test before launch.
-- **Wolt quote.** Amit's written OK.
-- **Logo strip.** Use only brands we may name.
 
 The full list of suggested copy changes is in `wildstack-site-copy-review.md` (Mark has it). None of them is applied yet. Each one is a small text edit plus a snapshot update.
 
@@ -97,6 +92,6 @@ The full list of suggested copy changes is in `wildstack-site-copy-review.md` (M
 - **Hero:** the background is a WebGL bird flock, light theme by default. It starts after load, runs at 30 fps, pauses off screen and uses fewer dots on phones. Reduced motion gives one still frame. The card film is `assets/wildstack-demo.mp4`.
 - **Who it's for:** the four audiences are franchises, partner networks, events and venues, and listings and offers. The flyers show made-up brands. The footer "Who it's for" links go to `#who` until each audience has its own page. Make an audience page only when it has a real case study.
 - **Compare:** the marks are our judgement, not sourced data. In-house wins on speed and CMYK. Agencies and in-house teams win on campaign ideas, which we do not sell.
-- **Pricing:** Starter $3,000 / 100 files / 3 templates, Growth $5,000 / 300 / 7, Scale $8,000 / 600 / up to 15. No setup fee and no minimum term. "48 hours" means business days, Monday to Friday. If a price changes, update the JSON-LD `Service` offers too.
+- **Pricing:** two cards. Agency from $2,500 / month (50, 100, 300 or 600 assets; no setup fee, cancel any month). Enterprise is custom, on an annual contract. "48 hours" means business days, Monday to Friday. If a price changes, update the JSON-LD `Service` offers too.
 - **Proof:** the race bar shows 4.2 days with an agency against 48 hours with us, on one clock.
 - **Cookies:** the "Cookies" link opens a simple panel that saves the choice in the browser. Replace it with a consent tool when tracking goes live.
