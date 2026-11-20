@@ -66,50 +66,76 @@ test('Privacy and Terms pages load cleanly and carry the site header and footer'
   expect(errors).toEqual([]);
 });
 
-test('newsletter form: consent gate, loading, success and error states, and the request it sends', async ({ page }) => {
+test('newsletter form: heading, red message when something is missing, loading, success and failure, and the request it sends', async ({ page }) => {
   const CONSENT_TEXT = 'I’d like to receive the Wildstack newsletter with design tips and product news. Unsubscribe anytime. See our Privacy Policy.';
-  let sent = null, release;
+  const MISSING = 'Please enter your email and tick the box to sign up.';
+  let sent = null, calls = 0, release;
   const gate = new Promise(r => { release = r; });
   await page.route('**/api/newsletter', async route => {
+    calls++;
     sent = JSON.parse(route.request().postData());
     await gate;
     await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) });
   });
   await page.goto('/', { waitUntil: 'load' });
-  const email = page.locator('#email'), consent = page.locator('#consent'), sub = page.locator('#form-sub');
+  const email = page.locator('#email'), consent = page.locator('#consent'), status = page.locator('#form-sub');
   const btn = page.locator('#news-form button[type="submit"]'), trap = page.locator('#company');
+  const press = () => btn.evaluate(b => b.click()); // a real click can be covered by the round email button on small screens
 
-  await expect(consent).not.toBeChecked();
-  await expect(btn).toBeDisabled();
-  await email.fill('not-an-email'); await consent.check();
-  await expect(btn).toBeDisabled();
-  await email.fill('Jane@Example.com');
+  // the design: heading, one line under it, the button, an empty status line, an unticked box
+  await expect(page.locator('.foot-title')).toHaveText('Sign up for our newsletter');
+  await expect(page.locator('.foot-sub')).toHaveText('Design tips and product news. No spam.');
   await expect(btn).toBeEnabled();
-  await consent.uncheck();
-  await expect(btn).toBeDisabled();
+  await expect(consent).not.toBeChecked();
+  await expect(status).toBeHidden();
 
+  // nothing filled in: red message, nothing sent
+  await press();
+  await expect(status).toHaveText(MISSING);
+  await expect(status).toHaveClass(/is-error/);
+  // box ticked but the email is not valid: same message
+  await consent.check(); await email.fill('not-an-email');
+  await press();
+  await expect(status).toHaveText(MISSING);
+  // a valid email clears the message by itself
+  await email.fill('Jane@Example.com');
+  await expect(status).toBeHidden();
+  // valid email but the box is not ticked: message again, and it clears when the box is ticked
+  await consent.uncheck();
+  await press();
+  await expect(status).toHaveText(MISSING);
+  await consent.check();
+  await expect(status).toBeHidden();
+  expect(calls).toBe(0);
+
+  // the hidden bot field, and the labels
   await expect(trap).toHaveAttribute('tabindex', '-1');
   expect(await trap.evaluate(el => !!el.closest('[aria-hidden="true"]'))).toBe(true);
   await expect(page.locator('label[for="email"]')).toHaveCount(1);
   await expect(page.locator('label.consent[for="consent"] a[href="/privacy/"]')).toHaveCount(1);
 
-  await consent.check();
+  // send: loading, then success
   await email.press('Enter');
   await expect(btn).toHaveText('Signing up...');
   await expect(btn).toBeDisabled();
   release();
-  await expect(sub).toHaveText('You’re on the list. Thanks!');
+  await expect(status).toHaveText('You’re on the list. Thanks!');
+  await expect(status).not.toHaveClass(/is-error/);
   await expect(btn).toHaveText('Sign up');
+  await expect(btn).toBeEnabled();
   await expect(email).toHaveValue('');
   await expect(consent).not.toBeChecked();
+  expect(calls).toBe(1);
   expect(sent).toMatchObject({ email: 'Jane@Example.com', consent: true, company: '', consentText: CONSENT_TEXT });
   expect(sent.source).toBe('http://localhost:4173/');
 
+  // the server says no: red message, button back
   await page.unroute('**/api/newsletter');
   await page.route('**/api/newsletter', route => route.fulfill({ status: 502, contentType: 'application/json', body: JSON.stringify({ ok: false, error: 'x' }) }));
   await email.fill('jane@example.com'); await consent.check();
   await email.press('Enter');
-  await expect(sub).toHaveText('Something went wrong. Try again or email hello@wildstack.studio');
+  await expect(status).toHaveText('Something went wrong. Try again or email hello@wildstack.studio');
+  await expect(status).toHaveClass(/is-error/);
   await expect(btn).toHaveText('Sign up');
 });
 

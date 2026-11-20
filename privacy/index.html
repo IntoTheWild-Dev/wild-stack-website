@@ -560,19 +560,25 @@
   .foot-card{background:var(--surface);color:var(--fg);border-radius:var(--r-card);padding:48px;display:flex;flex-direction:column;gap:44px}
   .foot-card .logo img{height:34px}
   .foot-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  .foot-form{display:flex;flex-direction:column;gap:32px;background:var(--surface-2);border-radius:var(--r-card);padding:36px 40px 32px}
-  .foot-form .field{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot-form{display:flex;flex-direction:column;gap:18px;background:var(--surface-2);border-radius:var(--r-card);padding:36px 40px 32px}
   .foot-form input{width:100%;min-width:0;font:inherit;font-size:88px;font-weight:500;letter-spacing:-.04em;line-height:1.05;border:0;background:transparent;color:var(--fg);padding:0;outline:none}
   .foot-form input::placeholder{color:var(--ash)}
-  .foot-form .sub{color:var(--fg);margin:0;font-size:22px;font-weight:500}
-  .foot-form .consent{display:flex;align-items:flex-start;gap:14px;margin:-12px 0 0;font-size:17px;line-height:1.45;font-weight:500;color:var(--fg);cursor:pointer}
+  .foot-form .foot-title{margin:0;font-size:clamp(26px,2.6vw,36px);line-height:1.15;letter-spacing:-.025em;font-weight:700;color:var(--fg)}
+  .foot-form .foot-sub{margin:-8px 0 4px;font-size:17px;font-weight:500;color:var(--ash-2);text-wrap:balance}
+  .foot-form .foot-row{display:flex;align-items:stretch;gap:12px}
+  .foot-form .foot-row input{flex:1}
+  .foot-form .foot-row .btn{flex:none;padding-inline:36px}
+  .foot-form .foot-status{margin:0;font-size:17px;font-weight:600;color:var(--fg)}
+  .foot-form .foot-status:empty{display:none}
+  .foot-form .foot-status.is-error{color:var(--accent-text)}
+  .foot-form .consent{display:flex;align-items:flex-start;gap:14px;margin:2px 0 0;font-size:17px;line-height:1.45;font-weight:500;color:var(--fg);cursor:pointer}
   .foot-form .consent input{width:22px;height:22px;flex:none;margin:2px 0 0;font-size:inherit;accent-color:var(--coral);cursor:pointer}
   .foot-form .consent input:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
   .foot-form .consent a{color:var(--accent-text);text-decoration:underline;text-underline-offset:3px}
   .foot-form .btn:disabled{opacity:.45;cursor:not-allowed}
   .foot-form input[type="email"]{font-size:24px;letter-spacing:-.01em;line-height:1.3;padding:22px 28px;border-radius:var(--r-btn);background:var(--ground);box-shadow:inset 0 0 0 1px var(--surface-3)}
   .foot-form input[type="email"]:focus-visible{box-shadow:inset 0 0 0 2px var(--coral)}
-  @media (max-width:768px){ .foot-form input[type="email"]{font-size:20px;padding:18px 22px} }
+  @media (max-width:768px){ .foot-form input[type="email"]{font-size:20px;padding:18px 22px} .foot-form .foot-row{flex-direction:column} .foot-form .foot-row .btn{width:100%;padding-block:20px} }
   .btn-soft{padding:20px 44px;background:#FFD9D5;color:var(--ink);font-size:20px}
   .btn-soft:hover{background:var(--coral)}
   .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;text-align:left;padding-inline:8px}
@@ -766,9 +772,8 @@
     .stat strong{font-size:44px}
     .closing{padding-block:112px}
     .foot-card{padding:28px 20px;gap:32px}
-    .foot-form{padding:28px 22px 24px;gap:28px}
+    .foot-form{padding:28px 22px 24px;gap:16px}
     .foot-form input{font-size:44px}
-    .foot-form .sub{font-size:17px}
     .btn-soft{padding:16px 32px}
     .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
   }
@@ -996,14 +1001,16 @@
   <div class="wrap">
     <div class="foot-card">
       <form class="foot-form" id="news-form" novalidate>
-        <label for="email" style="position:absolute;left:-9999px">Email for the newsletter</label>
-        <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
-        <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox"><span>I&rsquo;d like to receive the Wildstack newsletter with design tips and product news. Unsubscribe anytime. See our <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
-        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
-        <div class="field">
-          <p class="sub" id="form-sub" aria-live="polite">Sign up for our newsletter: design tips and product news.</p>
-          <button class="btn btn-soft" type="submit">Sign up</button>
+        <h3 class="foot-title">Sign up for our newsletter</h3>
+        <p class="foot-sub">Design tips and product news. No spam.</p>
+        <div class="foot-row">
+          <label for="email" style="position:absolute;left:-9999px">Email for the newsletter</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required aria-describedby="form-sub">
+          <button class="btn btn-primary" type="submit">Sign up</button>
         </div>
+        <p class="foot-status" id="form-sub" aria-live="polite"></p>
+        <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" aria-describedby="form-sub"><span>I&rsquo;d like to receive the Wildstack newsletter with design tips and product news. Unsubscribe anytime. See our <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
+        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
       </form>
       <div class="cols">
         <div><h3 class="fh">Product</h3><ul><li><a href="/#how">How it works</a></li><li><a href="/#enterprise">In&#8209;house</a></li><li><a href="/#pricing">Done for you</a></li><li><a href="/#pricing">Pricing</a></li></ul></div>
@@ -1067,15 +1074,27 @@
   (function(){
     var form=document.getElementById('news-form'); if(!form) return;
     var input=document.getElementById('email'), consent=document.getElementById('consent'), trap=document.getElementById('company'),
-        sub=document.getElementById('form-sub'), btn=form.querySelector('button[type="submit"]'), consentText=form.querySelector('.consent'),
-        idleLabel=btn.textContent, busy=false;
-    function valid(){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim()) && consent.checked; }
-    function sync(){ btn.disabled = busy || !valid(); }
-    input.addEventListener('input',sync); consent.addEventListener('change',sync); sync();
+        status=document.getElementById('form-sub'), btn=form.querySelector('button[type="submit"]'), consentText=form.querySelector('.consent'),
+        idleLabel=btn.textContent, busy=false, missing=false;
+    function emailOk(){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim()); }
+    function say(text,isError){ status.textContent=text; status.classList.toggle('is-error',!!isError); }
+    // After a "missing" message, keep the flags current and clear the message as soon as both are fine.
+    function refresh(){
+      if(!missing) return;
+      var okEmail=emailOk(), okBox=consent.checked;
+      input.setAttribute('aria-invalid',String(!okEmail)); consent.setAttribute('aria-invalid',String(!okBox));
+      if(okEmail && okBox){ missing=false; say('',false); }
+    }
+    input.addEventListener('input',refresh); consent.addEventListener('change',refresh);
     form.addEventListener('submit',function(e){
       e.preventDefault();
-      if(busy || !valid()) return;
-      busy=true; btn.textContent='Signing up...'; sync();
+      if(busy) return;
+      if(!emailOk() || !consent.checked){
+        missing=true; say('Please enter your email and tick the box to sign up.',true); refresh();
+        (emailOk()?consent:input).focus();
+        return;
+      }
+      busy=true; btn.disabled=true; btn.textContent='Signing up...'; say('',false);
       fetch('/api/newsletter',{
         method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ email:input.value.trim(), consent:true, source:location.origin+location.pathname, company:trap.value,
@@ -1084,10 +1103,9 @@
         .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j.ok===true; }); })
         .catch(function(){ return false; })
         .then(function(ok){
-          busy=false; btn.textContent=idleLabel;
-          if(ok){ sub.textContent='You\u2019re on the list. Thanks!'; input.value=''; consent.checked=false; }
-          else { sub.textContent='Something went wrong. Try again or email hello@wildstack.studio'; }
-          sync();
+          busy=false; btn.disabled=false; btn.textContent=idleLabel;
+          if(ok){ say('You’re on the list. Thanks!',false); input.value=''; consent.checked=false; input.removeAttribute('aria-invalid'); consent.removeAttribute('aria-invalid'); }
+          else { say('Something went wrong. Try again or email hello@wildstack.studio',true); }
         });
     });
   })();
